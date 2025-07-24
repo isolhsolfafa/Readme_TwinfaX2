@@ -4,8 +4,8 @@
 
 제조업 현장의 생산 데이터를 실시간으로 수집, 처리, 분석하고 시각화하는 통합 시스템입니다. **슬랙 봇 기반 AI 어시스턴트**를 통해 자연어로 생산 현황을 조회하고 관리할 수 있습니다.
 
-[![Deployed on Railway](https://img.shields.io/badge/API-Railway-0052CC?style=flat-square&logo=railway)](https://pda-api-extract.up.railway.app/)
-[![Deployed on Netlify](https://img.shields.io/badge/Dashboard-Netlify-00C7B7?style=flat-square&logo=netlify)](https://rainbow-haupia-cd8290.netlify.app/)
+[![Deployed on Railway](https://img.shields.io/badge/API-Railway-0052CC?style=flat-square&logo=railway)](https://*****.up.railway.app/)
+[![Deployed on Netlify](https://img.shields.io/badge/Dashboard-Netlify-00C7B7?style=flat-square&logo=netlify)](https://*****.netlify.app/)
 [![Slack Bot](https://img.shields.io/badge/Slack-Bot-4A154B?style=flat-square&logo=slack)](https://slack.com/)
 [![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=flat-square&logo=python)](https://python.org/)
 [![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=flat-square&logo=react)](https://reactjs.org/)
@@ -53,10 +53,9 @@ GST Factory Pipeline은 제조기술1팀의 생산 데이터를 실시간으로 
 - **확장성**: 다중 대시보드 지원 (공장/협력사/내부)
 
 ### 🎮 실제 서비스
-- **공장 대시보드**: [https://rainbow-haupia-cd8290.netlify.app/](https://rainbow-haupia-cd8290.netlify.app/)
-- **백엔드 API**: [https://pda-api-extract.up.railway.app/](https://pda-api-extract.up.railway.app/)
+- **공장 대시보드**: [https://gst-factory.netlify.app](https://gst-factory.netlify.app/)
+- **백엔드 API**: [https://*****-*****.up.railway.app/](https://*****-*****.up.railway.app/)
 - **슬랙 봇**: GST Factory 지능형 봇 (사내 슬랙 워크스페이스)
-- **API 문서**: [https://pda-api-extract.up.railway.app/api/docs](https://pda-api-extract.up.railway.app/api/docs)
 
 ## 🤖 슬랙 봇 AI 어시스턴트
 
@@ -688,10 +687,10 @@ API_IDENTIFIER=your-api-identifier
 #### 3. 슬랙 앱 설정
 ```bash
 # Event Subscriptions
-Request URL: https://pda-api-extract.up.railway.app/slack/events
+Request URL: https://*****.up.railway.app/slack/events
 
 # Interactive Components  
-Request URL: https://pda-api-extract.up.railway.app/slack/interactive
+Request URL: https://*****.up.railway.app/slack/interactive
 
 # OAuth & Permissions
 Bot Token Scopes:
@@ -716,27 +715,27 @@ build
 REACT_APP_AUTH0_DOMAIN=your-domain.auth0.com
 REACT_APP_AUTH0_CLIENT_ID=your-client-id
 REACT_APP_AUTH0_AUDIENCE=your-audience
-REACT_APP_API_BASE_URL=https://pda-api-extract.up.railway.app
+REACT_APP_API_BASE_URL=https://*****.up.railway.app
 ```
 
 #### 2. 배포 상태 확인
 ```bash
 # 프론트엔드
-https://rainbow-haupia-cd8290.netlify.app/
+https://*****.netlify.app/
 
 # 백엔드 API
-https://pda-api-extract.up.railway.app/
+https://*****.up.railway.app/
 
 # 슬랙 봇 상태
-https://pda-api-extract.up.railway.app/slack/events
+https://*****.up.railway.app/slack/events
 ```
 
 ## 🌐 배포
 
 ### Production 환경
 
-- **백엔드 API**: Railway (https://pda-api-extract.up.railway.app)
-- **프론트엔드**: Netlify (https://rainbow-haupia-cd8290.netlify.app)
+- **백엔드 API**: Railway (https://*****.up.railway.app)
+- **프론트엔드**: Netlify (https://*****.netlify.app)
 - **데이터베이스**: Railway PostgreSQL
 
 ### 자동 배포 프로세스
@@ -854,7 +853,7 @@ GRANT ALL PRIVILEGES ON DATABASE gst_factory_db TO your_username;
 
 #### 3. Auth0 인증 오류
 - Auth0 도메인 및 API 식별자 확인
-- 허용된 콜백 URL 설정: `http://localhost:3000, https://rainbow-haupia-cd8290.netlify.app`
+- 허용된 콜백 URL 설정: `http://localhost:3000, https://*****.netlify.app`
 - JWT 토큰 만료 시간 확인
 
 #### 4. 프론트엔드 빌드 오류
@@ -872,7 +871,7 @@ npm start -- --reset-cache
 ```python
 # Flask CORS 설정 확인
 from flask_cors import CORS
-CORS(app, origins=["http://localhost:3000", "https://rainbow-haupia-cd8290.netlify.app"])
+CORS(app, origins=["http://localhost:3000", "https://*****.netlify.app"])
 ```
 
 ### 로그 모니터링
@@ -1019,6 +1018,17 @@ python -m pytest tests/integration/ -v
 
 ## 📝 변경 이력
 
+### v3.1.1 (2025-07-22) 🔧 **SummaryTable 진행률 계산 이슈 해결**
+- **문제 해결**: SummaryTable에서 일정 기준 진행률이 0.0%로 표시되는 문제 해결
+- **원인 분석**: `/api/info` 엔드포인트에서 `manufacturing_start` 필드 누락 확인
+- **솔루션**: Frontend App.js 수정으로 `/api/factory` 엔드포인트 사용하도록 변경
+  - `/api/factory`에는 `manufacturing_start`와 `test_start` 필드 모두 포함
+  - 불필요한 `/api/info` 호출 제거로 성능 최적화
+- **백업본 분석**: `App_github_backup_25.7.21.js`와 비교하여 올바른 구조로 복원
+- **결과**: 실제 진행률 계산 가능하여 정확한 일정 기준 진행률 표시
+- **파일 수정**: `factory-dashboard/src/App.js` (단일 파일 수정으로 해결)
+- **백엔드 수정 불필요**: 기존 `/api/factory` 엔드포인트 활용으로 추가 개발 없이 해결
+  
 ### v3.1.0 (2025-07-14) 🔧 **데이터 정합성 개선 및 작업 시간 조회 기능 추가**
 - **진행률 계산 로직 개선**: 핵심 카테고리(기구, 전장, TMS_반제품) 기준으로 진행률 계산
 - **데이터 정합성 문제 해결**: 개별 조회와 월별 조회 간 일관성 확보
@@ -1074,7 +1084,7 @@ python -m pytest tests/integration/ -v
 - **신규 엔드포인트 추가**:
   - `/api/cycle_time/monthly`: CT 분석 월별 데이터 조회
   - `/api/product_code/serials`: S/N 목록 및 스프레드시트 링크 조회
-- **CORS 설정 업데이트**: Railway URL 추가 (`https://pda-api-extract.up.railway.app`)
+- **CORS 설정 업데이트**: Railway URL 추가 (`https://*****.up.railway.app`)
 - **환경 대응**: 개발/운영 환경 자동 감지 URL 설정
 
 #### 🛠️ **기술적 개선사항**
@@ -1120,11 +1130,10 @@ python -m pytest tests/integration/ -v
 
 ## 📞 연락처
 
-- **프로젝트 기획자**: kdkyu311
+- **프로젝트 기획자**: TwinfaX2
 - **이메일**: kdkyu311@naver.com  
-- **소속**: GST 제조기술1팀
+- **소속**: GST 제조기술1팀 / DX TF
 - **개발 방식**: AI 협업 기반 개발
-- **GitHub**: [https://github.com/your-username/gst-factory-pipeline](https://github.com/your-username/gst-factory-pipeline)
 
 ---
 
@@ -1133,4 +1142,3 @@ python -m pytest tests/integration/ -v
 **혁신적인 AI 기반 개발로 구현된 프로젝트입니다!**
 
 ⭐ 이 프로젝트가 도움이 되었다면 스타를 눌러주세요!
-# Reame
