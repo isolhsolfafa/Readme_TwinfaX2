@@ -413,21 +413,26 @@ Request URL: https://*****.up.railway.app/slack/interactive
 
 ### 배포 전략
 
-```mermaid
-graph TD
-    A[GitHub Push] --> B{Target Branch}
-    B -->|main| C[Production Deploy]
-    B -->|develop| D[Staging Deploy]
-    
-    C --> E[Railway Backend]
-    C --> F[Netlify Frontend]
-    C --> G[GitHub Pages]
-    
-    D --> H[Test Environment]
-    
-    style C fill:#4caf50
-    style D fill:#ff9800
 ```
+📝 GitHub Push
+      │
+      ▼
+   🔀 Branch?
+      │
+   ┌──┴──┐
+   │     │
+🚀 main  │ develop 🧪
+   │     │
+   ▼     ▼
+✅ Production   🔧 Staging
+   │              │
+   ├─ Railway     └─ Test Env
+   ├─ Netlify    
+   └─ GitHub Pages
+```
+
+**Production**: Railway (Backend) + Netlify (Frontend) + GitHub Pages  
+**Staging**: 테스트 환경에서 검증 후 Production 배포
 
 ### GitHub Actions 설정
 
@@ -670,12 +675,21 @@ dashboard: 대시보드 업데이트
 
 ### 내부 시스템 구축의 4대 핵심 가치
 
-```mermaid
-pie title 기대 효과 분포
-    "품질개선 피드백 주기 단축" : 30
-    "시간 절약 및 오류 방지" : 25  
-    "사내 기술 내재화" : 25
-    "확장성 확보" : 20
+| 🎯 핵심 가치 | 비중 | 효과 |
+|-------------|------|------|
+| **🔄 품질개선 피드백 주기 단축** | **30%** | 주간 → 실시간 모니터링 |
+| **⚡ 시간 절약 및 오류 방지** | **25%** | 수작업 완전 제거 |
+| **🏠 사내 기술 내재화** | **25%** | 외주 의존도 최소화 |
+| **📈 확장성 확보** | **20%** | 클라우드 무제한 확장 |
+
+```
+📊 기대 효과 분포
+┌────────────────────────────────────────┐
+│ 품질개선 (30%) ████████████████▌       │
+│ 시간절약 (25%) ████████████▌           │  
+│ 기술내재 (25%) ████████████▌           │
+│ 확장성   (20%) ██████████              │
+└────────────────────────────────────────┘
 ```
 
 #### 품질개선 피드백 주기 단축
