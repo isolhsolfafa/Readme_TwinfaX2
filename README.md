@@ -17,10 +17,6 @@
 ## 📊 ROI 7,048% 달성
 **내부개발 역량 활용 + 비용 절감 효과**
 
-<div align="center">
-  <img src="images/roi-analysis.png" alt="ROI 7,048% 달성 분석" width="700"/>
-</div>
-
 ```
 💰 외주 대비 절감: 1억 4,096만원
 ⚡ 투자 회수 기간: 5일 이내  
@@ -50,11 +46,6 @@
 ## 시스템 개요
 
 ## 기술 스택
-
-<div align="center">
-  <img src="images/tech-stack.png" alt="기술 스택 인포그래픽" width="800"/>
-  <p><em>Full-Stack 개발에 사용된 주요 기술들</em></p>
-</div>
 
 ### Backend
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -103,17 +94,56 @@ GST 공장의 **제조 데이터를 실시간으로 수집, 분석, 시각화**�
 
 ### 시스템 아키텍처
 
-<div align="center">
-  <img src="images/system-architecture.png" alt="시스템 아키텍처" width="900"/>
-  <p><em><strong>GST 제조 DX 통합 자동화 시스템 아키텍처</strong></em></p>
-</div>
+```mermaid
+graph TB
+    subgraph A ["데이터 수집"]
+        GS["Google Sheets<br/>데이터 수집"]
+        GT["Google Drive<br/>JSON DB 생성"]
+    end
+    
+    subgraph B ["데이터베이스"]
+        PG["PostgreSQL<br/>Railway 클라우드"]
+        API["Flask API 서버<br/>RESTful 구조"]
+    end
+    
+    subgraph C ["시각화"]
+        NF["Netlify Dashboard<br/>실시간 시각화"]
+        GH["GitHub<br/>코드 버전 관리"]
+    end
+    
+    subgraph D ["알림&조회"]
+        SL["Slack 챗봇<br/>KPI 질의응답"]
+        KA["Kakao 알림<br/>실시간 알림"]
+    end
+    
+    GS --> PG
+    GT --> PG
+    PG --> API
+    API --> NF
+    API --> SL
+    API --> KA
+    GH --> NF
+    
+    style GS fill:#4285F4
+    style PG fill:#336791
+    style API fill:#000000
+    style NF fill:#00C7B7
+    style SL fill:#4A154B
+```
 
 **Slack 챗봇은 Flask API와 직접 연동되어 주요 KPI 질의·응답 및 알림 기능을 수행**
 
-<div align="center">
-  <img src="images/project-timeline.png" alt="프로젝트 진화 타임라인" width="800"/>
-  <p><em><strong>프로젝트 진화 과정 (2024년 → 2025년)</strong></em></p>
-</div>
+```mermaid
+graph LR
+    A[PDA_partner<br/>초기 스크립트] --> B[모듈화<br/>구조화]
+    B --> C[API 서버<br/>React 대시보드]
+    C --> D[AI 어시스턴트<br/>클라우드 배포]
+    
+    style A fill:#ffeb3b
+    style B fill:#ff9800
+    style C fill:#4caf50
+    style D fill:#2196f3
+```
 
 ### 핵심 특징
 
@@ -139,43 +169,11 @@ GST 공장의 **제조 데이터를 실시간으로 수집, 분석, 시각화**�
 - 자동 스케줄링 (매월 마지막 평일 실행)
 
 **KPI 평가 기준:**
-
-<div align="center">
-<table>
-  <thead>
-    <tr style="background-color: #f8f9fa;">
-      <th style="border: 1px solid #dee2e6; padding: 12px; text-align: center;"><strong>구분</strong></th>
-      <th style="border: 1px solid #dee2e6; padding: 12px; text-align: center; background-color: #d4edda;"><strong>A등급</strong></th>
-      <th style="border: 1px solid #dee2e6; padding: 12px; text-align: center; background-color: #d1ecf1;"><strong>B등급</strong></th>
-      <th style="border: 1px solid #dee2e6; padding: 12px; text-align: center; background-color: #fff3cd;"><strong>C등급</strong></th>
-      <th style="border: 1px solid #dee2e6; padding: 12px; text-align: center; background-color: #f8d7da;"><strong>D등급</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="border: 1px solid #dee2e6; padding: 10px; font-weight: bold;">NaN 비율</td>
-      <td style="border: 1px solid #dee2e6; padding: 10px; text-align: center;">&lt;1%</td>
-      <td style="border: 1px solid #dee2e6; padding: 10px; text-align: center;">1-3%</td>
-      <td style="border: 1px solid #dee2e6; padding: 10px; text-align: center;">3-6%</td>
-      <td style="border: 1px solid #dee2e6; padding: 10px; text-align: center;">≥6%</td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid #dee2e6; padding: 10px; font-weight: bold;">기구 불량건수</td>
-      <td style="border: 1px solid #dee2e6; padding: 10px; text-align: center;">&lt;6건</td>
-      <td style="border: 1px solid #dee2e6; padding: 10px; text-align: center;">6-16건</td>
-      <td style="border: 1px solid #dee2e6; padding: 10px; text-align: center;">17-27건</td>
-      <td style="border: 1px solid #dee2e6; padding: 10px; text-align: center;">≥28건</td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid #dee2e6; padding: 10px; font-weight: bold;">전장 불량건수</td>
-      <td style="border: 1px solid #dee2e6; padding: 10px; text-align: center;">&lt;1건</td>
-      <td style="border: 1px solid #dee2e6; padding: 10px; text-align: center;">1-3건</td>
-      <td style="border: 1px solid #dee2e6; padding: 10px; text-align: center;">4-6건</td>
-      <td style="border: 1px solid #dee2e6; padding: 10px; text-align: center;">≥7건</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+| 구분 | A등급 | B등급 | C등급 | D등급 |
+|------|-------|-------|-------|-------|
+| **NaN 비율** | <1% | 1-3% | 3-6% | ≥6% |
+| **기구 불량건수** | <6건 | 6-16건 | 17-27건 | ≥28건 |
+| **전장 불량건수** | <1건 | 1-3건 | 4-6건 | ≥7건 |
 
 ### 2. GST Factory Pipeline
 
@@ -433,10 +431,32 @@ Request URL: https://*****.up.railway.app/slack/interactive
 
 ### 배포 전략
 
-<div align="center">
-  <img src="images/cicd-pipeline.png" alt="CI/CD 파이프라인 배포 전략" width="750"/>
-  <p><em><strong>GitHub Actions 기반 자동화 배포 파이프라인</strong></em></p>
-</div>
+```mermaid
+graph TD
+    A[GitHub Push] --> B{Target Branch}
+    B -->|main| C[Production Deploy]
+    B -->|develop| D[Staging Deploy]
+    
+    C --> E[Railway Backend]
+    C --> F[Netlify Frontend]
+    C --> G[GitHub Pages]
+    
+    D --> H[Test Environment]
+    
+    style C fill:#4caf50
+    style D fill:#ff9800
+```-->|main| C[Production Deploy]
+    B -->|develop| D[Staging Deploy]
+    
+    C --> E[Railway Backend]
+    C --> F[Netlify Frontend]
+    C --> G[GitHub Pages]
+    
+    D --> H[Test Environment]
+    
+    style C fill:#4caf50
+    style D fill:#ff9800
+```
 
 ### GitHub Actions 설정
 
@@ -679,10 +699,13 @@ dashboard: 대시보드 업데이트
 
 ### 내부 시스템 구축의 4대 핵심 가치
 
-<div align="center">
-  <img src="images/impact-distribution.png" alt="기대 효과 분포" width="600"/>
-  <p><em><strong>내부 시스템 구축의 4대 핵심 가치</strong></em></p>
-</div>
+```mermaid
+pie title 기대 효과 분포
+    "품질개선 피드백 주기 단축" : 30
+    "시간 절약 및 오류 방지" : 25  
+    "사내 기술 내재화" : 25
+    "확장성 확보" : 20
+```
 
 #### 품질개선 피드백 주기 단축
 - **협력사 업무 현황 실시간 파악**: 기존 주간 → 실시간 모니터링
