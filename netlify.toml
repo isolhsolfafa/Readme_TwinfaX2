@@ -1,0 +1,7 @@
+[build]
+  command   = "pandoc -f markdown -t html -s -o index.html README.md"
+  publish   = "."
+
+[build.environment]
+  # Netlify 기본 이미지에 pandoc이 없으면 ↓ 추가
+  NODE_VERSION = "18"  # 예시 (필수 아님)
