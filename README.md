@@ -11,11 +11,9 @@
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-12+-336791?style=flat-square&logo=postgresql)](https://postgresql.org/)
 [![Deployed on Railway](https://img.shields.io/badge/API-Railway-0052CC?style=flat-square&logo=railway)](https://*****)
 [![Deployed on Netlify](https://img.shields.io/badge/Dashboard-Netlify-00C7B7?style=flat-square&logo=netlify)](https://*****)
-[![▶ Dashboard Demo](https://img.shields.io/badge/Dashboard_Demo-YouTube-FF0000?style=flat-square&logo=youtube)](https://youtu.be/esTtmO8jM_k)  
-[![▶ Slack Bot Demo](https://img.shields.io/badge/Slack_Bot_Demo-YouTube-FF0000?style=flat-square&logo=youtube)](https://youtube.com/shorts/sjsWLC4aH50?feature=share)  
 
-## 🎯 **ROI 7,048% 달성** 
-**[ 내부개발 역량 활용 + 비용 절감 효과 ]**
+## 📊 ROI 7,048% 달성
+**내부개발 역량 활용 + 비용 절감 효과**
 
 ```
 💰 외주 대비 절감: 1억 4,096만원
@@ -30,49 +28,49 @@
 실제 배포 시 환경변수를 통해 설정하세요.
 -->
 
-## 📋 목차
+## 목차
 
-- [🎯 시스템 개요](#-시스템-개요)
-- [🏗️ 모듈별 구성](#️-모듈별-구성)
-- [🤖 AI 어시스턴트](#-ai-어시스턴트)
-- [🚀 설치 가이드](#-설치-가이드)
-- [⚙️ 환경 설정](#️-환경-설정)
-- [📊 대시보드 접속](#-대시보드-접속)
-- [🔄 CI/CD 파이프라인](#-cicd-파이프라인)
-- [📈 모니터링](#-모니터링)
-- [🛠️ 트러블슈팅](#️-트러블슈팅)
-- [🤝 기여 가이드](#-기여-가이드)
+- [시스템 개요](#시스템-개요)
+- [모듈별 구성](#모듈별-구성)
+- [AI 어시스턴트](#ai-어시스턴트)
+- [설치 가이드](#설치-가이드)
+- [환경 설정](#환경-설정)
+- [대시보드 접속](#대시보드-접속)
+- [CI/CD 파이프라인](#cicd-파이프라인)
+- [모니터링](#모니터링)
+- [트러블슈팅](#트러블슈팅)
+- [기여 가이드](#기여-가이드)
 
-## 🎯 시스템 개요
+## 시스템 개요
 
-## 🛠️ 기술 스택
+## 기술 스택
 
-### 🔧 **Backend**
+### Backend
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?style=for-the-badge&logo=sqlalchemy&logoColor=white)
 ![Auth0](https://img.shields.io/badge/Auth0-EB5424?style=for-the-badge&logo=auth0&logoColor=white)
 
-### 🎨 **Frontend**
+### Frontend
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![Recharts](https://img.shields.io/badge/Recharts-8884D8?style=for-the-badge&logo=chart.js&logoColor=white)
 ![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chart.js&logoColor=white)
 ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
 
-### 🚀 **Infra / DevOps**
+### Infrastructure & DevOps
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Railway](https://img.shields.io/badge/Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white)
 ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
 
-### 🤖 **AI / Automation**
+### AI & Automation
 ![OpenAI](https://img.shields.io/badge/OpenAI%20GPT-412991?style=for-the-badge&logo=openai&logoColor=white)
 ![Slack](https://img.shields.io/badge/Slack%20SDK-4A154B?style=for-the-badge&logo=slack&logoColor=white)
 ![Random Forest](https://img.shields.io/badge/Random%20Forest-FF6F00?style=for-the-badge&logo=scikit-learn&logoColor=white)
 ![TF-IDF](https://img.shields.io/badge/TF--IDF-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
 
-### 🔗 **APIs & Integration**
+### APIs & Integration
 ![Google Sheets](https://img.shields.io/badge/Google%20Sheets-0F9D58?style=for-the-badge&logo=google-sheets&logoColor=white)
 ![Google Drive](https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge&logo=google-drive&logoColor=white)
 ![Gmail](https://img.shields.io/badge/Gmail%20SMTP-EA4335?style=for-the-badge&logo=gmail&logoColor=white)
@@ -80,41 +78,40 @@
 ![Microsoft Teams](https://img.shields.io/badge/Teams%20API-6264A7?style=for-the-badge&logo=microsoft-teams&logoColor=white)
 ![Azure](https://img.shields.io/badge/Azure%20API-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white)
 
-### 🏆 **Ownership: Solo E-to-E Development**
+### Ownership: Solo E-to-E Development
 ```
 기획 → 설계 → ETL → DB → API → FE → 챗봇 → 알림 → 운영 → 배포
 ```
-## 🎯 시스템 개요
 
 GST 공장의 **제조 데이터를 실시간으로 수집, 분석, 시각화**하는 통합 자동화 시스템입니다. 단순한 파이썬 스크립트에서 시작하여 **AI 협업을 통해 고도화된 현대적 시스템**으로 발전했습니다.
 
-### 🏭 **4대 핵심 기능**
+### 4대 핵심 기능
 ```
 📊 데이터 분석    🤖 자동화시스템    📱 대시보드    🔔 알림 시스템
 ```
 
-### 🔄 **시스템 아키텍처**
+### 시스템 아키텍처
 
 ```mermaid
 graph TB
-    subgraph "1️⃣ 데이터 수집"
-        GS[Google Sheets<br/>데이터 수집]
-        GT[Google Drive<br/>JSON DB 생성]
+    subgraph A ["데이터 수집"]
+        GS["Google Sheets<br/>데이터 수집"]
+        GT["Google Drive<br/>JSON DB 생성"]
     end
     
-    subgraph "2️⃣ 데이터베이스"
-        PG[PostgreSQL<br/>Railway 클라우드]
-        API[Flask API 서버<br/>RESTful 구조]
+    subgraph B ["데이터베이스"]
+        PG["PostgreSQL<br/>Railway 클라우드"]
+        API["Flask API 서버<br/>RESTful 구조"]
     end
     
-    subgraph "3️⃣ 시각화"
-        NF[Netlify Dashboard<br/>실시간 시각화]
-        GH[GitHub<br/>코드 버전 관리]
+    subgraph C ["시각화"]
+        NF["Netlify Dashboard<br/>실시간 시각화"]
+        GH["GitHub<br/>코드 버전 관리"]
     end
     
-    subgraph "4️⃣ 알림&조회"
-        SL[Slack 챗봇<br/>KPI 질의응답]
-        KA[Kakao 알림<br/>실시간 알림]
+    subgraph D ["알림&조회"]
+        SL["Slack 챗봇<br/>KPI 질의응답"]
+        KA["Kakao 알림<br/>실시간 알림"]
     end
     
     GS --> PG
@@ -132,7 +129,7 @@ graph TB
     style SL fill:#4A154B
 ```
 
-**💡 Slack 챗봇은 Flask API와 직접 연동되어 주요 KPI 질의·응답 및 알림 기능을 수행**
+**Slack 챗봇은 Flask API와 직접 연동되어 주요 KPI 질의·응답 및 알림 기능을 수행**
 
 ```mermaid
 graph LR
@@ -146,29 +143,28 @@ graph LR
     style D fill:#2196f3
 ```
 
-### 🎮 핵심 특징
+### 핵심 특징
 
-- **📊 실시간 데이터 파이프라인**: Google Sheets → PostgreSQL → React 대시보드
-- **🤖 AI 기반 어시스턴트**: OpenAI GPT-3.5 활용 슬랙 봇 
-- **📱 반응형 웹 대시보드**: 다중 대시보드 지원 (공장/협력사/내부)
-- **🔄 완전 자동화**: GitHub Actions CI/CD 파이프라인
-- **☁️ 클라우드 네이티브**: Railway + Netlify 배포
+- **실시간 데이터 파이프라인**: Google Sheets → PostgreSQL → React 대시보드
+- **AI 기반 어시스턴트**: OpenAI GPT-3.5 활용 슬랙 봇 
+- **반응형 웹 대시보드**: 다중 대시보드 지원 (공장/협력사/내부)
+- **완전 자동화**: GitHub Actions CI/CD 파이프라인
+- **클라우드 네이티브**: Railway + Netlify 배포
 
-## 🏗️ 모듈별 구성
+## 모듈별 구성
 
-### 1. 🤖 **협력사 평가 대시보드** 
-```
-📊 핵심 기능: 협력사별 품질 평가 지표 실시간 모니터링
-🎯 KPI 계산: 불량건수(70%) + 누락비율(30%) 가중평균
-📈 실시간 대시보드: 등급별 색상 구분, 상세 불량 내역 표시
-```
+### 1. 협력사 평가 대시보드
+
+**핵심 기능**: 협력사별 품질 평가 지표 실시간 모니터링  
+**KPI 계산**: 불량건수(70%) + 누락비율(30%) 가중평균  
+**실시간 대시보드**: 등급별 색상 구분, 상세 불량 내역 표시
 
 **주요 특징:**
-- 📈 실시간 데이터 수집 (Google Sheets + Google Drive)
-- 🏆 스마트 순위 매김 (동일 점수 시 불량 건수 우선순위)
-- 📋 상세 불량 내역 (제품S/N, 발생일, CSV 다운로드)
-- ☁️ 클라우드 백업 (Google Drive 자동 백업)
-- ⏰ 자동 스케줄링 (매월 마지막 평일 실행)
+- 실시간 데이터 수집 (Google Sheets + Google Drive)
+- 스마트 순위 매김 (동일 점수 시 불량 건수 우선순위)
+- 상세 불량 내역 (제품S/N, 발생일, CSV 다운로드)
+- 클라우드 백업 (Google Drive 자동 백업)
+- 자동 스케줄링 (매월 마지막 평일 실행)
 
 **KPI 평가 기준:**
 | 구분 | A등급 | B등급 | C등급 | D등급 |
@@ -177,12 +173,11 @@ graph LR
 | **기구 불량건수** | <6건 | 6-16건 | 17-27건 | ≥28건 |
 | **전장 불량건수** | <1건 | 1-3건 | 4-6건 | ≥7건 |
 
-### 2. 🏭 **GST Factory Pipeline** 
-```
-🔄 ETL 파이프라인: Google Sheets → PostgreSQL → React 대시보드
-🤖 슬랙 봇 AI: OpenAI GPT-3.5 기반 지능형 어시스턴트
-🌐 다중 대시보드: 공장/협력사/내부 대시보드 지원
-```
+### 2. GST Factory Pipeline
+
+**ETL 파이프라인**: Google Sheets → PostgreSQL → React 대시보드  
+**슬랙 봇 AI**: OpenAI GPT-3.5 기반 지능형 어시스턴트  
+**다중 대시보드**: 공장/협력사/내부 대시보드 지원
 
 **실제 서비스:**
 - **공장 대시보드**: `https://*****` <!-- 실제 URL 숨김 처리 -->
@@ -195,17 +190,16 @@ graph LR
 - **AI**: OpenAI GPT-3.5, Slack SDK 3.26.2
 - **인프라**: Railway (Backend), Netlify (Frontend)
 
-### 3. 📅 **협력사 출입 관리**
-```
-📊 일자별 관리: 협력사별 출입 현황 실시간 모니터링
-📅 최근 7일 자동: 주단위 데이터 자동 관리
-🎨 고유 색상: 협력사별 색상 구분 시스템
-```
+### 3. 협력사 출입 관리
+
+**일자별 관리**: 협력사별 출입 현황 실시간 모니터링  
+**최근 7일 자동**: 주단위 데이터 자동 관리  
+**고유 색상**: 협력사별 색상 구분 시스템
 
 **자동화 특징:**
-- 🚀 GitHub Actions 매일 5회 자동 실행 (8:10, 9:10, 17:10, 18:10, 20:10 KST)
-- 💾 GitHub JSON 기반 CSV 다운로드
-- 🔄 중복 데이터 자동 정리
+- GitHub Actions 매일 5회 자동 실행 (8:10, 9:10, 17:10, 18:10, 20:10 KST)
+- GitHub JSON 기반 CSV 다운로드
+- 중복 데이터 자동 정리
 
 **협력사별 색상 시스템:**
 ```javascript
@@ -220,52 +214,49 @@ var companyColors = {
 };
 ```
 
-### 4. 📊 **불량 분석 대시보드**
-```
-📊 실시간 연동: Google Sheets 불량 데이터 자동 분석
-🎨 모던 UI: 카드 뷰와 인터랙티브 차트
-📋 제품별 요약: 불량 건수와 주요 분류 표시
-```
+### 4. 불량 분석 대시보드
+
+**실시간 연동**: Google Sheets 불량 데이터 자동 분석  
+**모던 UI**: 카드 뷰와 인터랙티브 차트  
+**제품별 요약**: 불량 건수와 주요 분류 표시
 
 **자동 배포 스케줄:**
-- **매일 오전 9시** (한국 시간)
-- **매일 오후 2시** (한국 시간)  
-- **매일 오후 6시** (한국 시간)
-- **코드 푸시 시** (main 브랜치)
+- 매일 오전 9시 (한국 시간)
+- 매일 오후 2시 (한국 시간)  
+- 매일 오후 6시 (한국 시간)
+- 코드 푸시 시 (main 브랜치)
 
-### 5. 🤖 **불량 예측 시스템**
-```
-🤖 ML 기반 예측: RandomForest + TF-IDF 불량 확률 예측
-📊 Teams 연동: Microsoft Teams 실시간 데이터 로드
-⚖️ 생산량 가중치: 실제 생산량 반영한 예측
-```
+### 5. 불량 예측 시스템
+
+**ML 기반 예측**: RandomForest + TF-IDF 불량 확률 예측  
+**Teams 연동**: Microsoft Teams 실시간 데이터 로드  
+**생산량 가중치**: 실제 생산량 반영한 예측
 
 **2025년 7월 베타 서비스:**
-- ✅ 7월 생산물량 96대 → 156대 (+62.5%)
-- ✅ 모델 다양성 5개 → 10개 모델 (GAIA-II, DRAGON 계열 추가)
-- ✅ 동적 분기별 차트 자동 생성
-- ✅ 실시간 대시보드 외주사별/조치유형별 통합 분석
+- 7월 생산물량 96대 → 156대 (+62.5%)
+- 모델 다양성 5개 → 10개 모델 (GAIA-II, DRAGON 계열 추가)
+- 동적 분기별 차트 자동 생성
+- 실시간 대시보드 외주사별/조치유형별 통합 분석
 
-### 6. 🔄 **생산 데이터 자동화**
-```
-📊 작업시간 분석: NaN/오버타임 분석, 진행률 계산
-🗺️ 히트맵 생성: 주간/월간, 파트너별/모델별
-📧 자동 알림: 이메일/카카오톡 알림 시스템
-```
+### 6. 생산 데이터 자동화
+
+**작업시간 분석**: NaN/오버타임 분석, 진행률 계산  
+**히트맵 생성**: 주간/월간, 파트너별/모델별  
+**자동 알림**: 이메일/카카오톡 알림 시스템
 
 **히트맵 시스템:**
 - **주간 히트맵**: 매주 실행 시 자동 생성
 - **월간 히트맵**: 매월 마지막 금요일 자동 생성 (협력사별/모델별)
-- **📊트렌드 지표**: HTML 리포트 히트맵 링크 통합
+- **트렌드 지표**: HTML 리포트 히트맵 링크 통합
 
-## 🤖 AI 어시스턴트
+## AI 어시스턴트
 
-### 🎯 슬랙 봇 핵심 기능
+### 슬랙 봇 핵심 기능
 
-#### 📊 **시리얼 넘버 기반 조회**
+#### 시리얼 넘버 기반 조회
 ```
-💬 사용자: "sn 5785 진행률 알려줘"
-🤖 봇: 인터랙티브 메뉴 제공
+사용자: "sn 5785 진행률 알려줘"
+봇: 인터랙티브 메뉴 제공
     📈 진행률 조회
     📋 스프레드시트 URL  
     📅 일정 정보
@@ -273,7 +264,7 @@ var companyColors = {
     📊 전체 정보
 ```
 
-#### 🧠 **지능형 질문 분석**
+#### 지능형 질문 분석
 ```python
 # 지능형 질문 분석 워크플로우
 사용자 질문 → GPT 분석 → 의도 파악 → 
@@ -283,24 +274,24 @@ var companyColors = {
 └─ 일반 질문: GPT 공장 관리 조언
 ```
 
-#### 🔍 **월별 조건 검색**
+#### 월별 조건 검색
 ```
-💬 사용자: "이번달 7월 생산물량 진행률 100% sn 알려줘"
-🤖 봇: 조건에 맞는 시리얼 넘버 목록 제공
+사용자: "이번달 7월 생산물량 진행률 100% sn 알려줘"
+봇: 조건에 맞는 시리얼 넘버 목록 제공
 ```
 
-#### 💡 **공장 관리 AI 상담**
+#### 공장 관리 AI 상담
 - **생산성 향상**: "생산성 향상 방법은?"
 - **품질 관리**: "품질 관리 어떻게 해야 하나요?"
 - **안전 관리**: "공장 안전 관리 팁 알려주세요"
 
-### 📈 **성과 지표**
+### 성과 지표
 - **응답 시간**: 평균 2-3초 내 응답
 - **정확도**: 시리얼 넘버 조회 99% 정확도
 - **사용성**: 자연어 질문 95% 이상 이해
 - **가용성**: 24/7 무중단 서비스
 
-## 🚀 설치 가이드
+## 설치 가이드
 
 ### 1. 시스템 요구사항
 ```bash
@@ -337,7 +328,7 @@ npm install
 npm start
 ```
 
-## ⚙️ 환경 설정
+## 환경 설정
 
 ### 환경변수 템플릿 (.env)
 ```bash
@@ -414,9 +405,9 @@ Request URL: https://*****.up.railway.app/slack/interactive
 - im:write
 ```
 
-## 📊 대시보드 접속
+## 대시보드 접속
 
-### 🌐 공개 대시보드
+### 공개 대시보드
 | 서비스 | URL | 설명 |
 |--------|-----|------|
 | **공장 대시보드** | `https://*****` | Auth0 인증 필요 |
@@ -425,7 +416,7 @@ Request URL: https://*****.up.railway.app/slack/interactive
 
 <!-- 실제 URL은 환경변수나 별도 설정에서 관리 -->
 
-### 🔒 내부 대시보드
+### 내부 대시보드
 | 모듈 | 실행 방법 | 설명 |
 |------|-----------|------|
 | **협력사 평가** | `python partner_kpi_refactored.py` | KPI 대시보드 생성 |
@@ -434,9 +425,9 @@ Request URL: https://*****.up.railway.app/slack/interactive
 | **ML 예측** | `python run_refactored_dashboard.py` | 불량 예측 대시보드 |
 | **데이터 자동화** | `python PDA_patner.py` | 생산 데이터 처리 |
 
-## 🔄 CI/CD 파이프라인
+## CI/CD 파이프라인
 
-### 📦 배포 전략
+### 배포 전략
 
 ```mermaid
 graph TD
@@ -454,7 +445,7 @@ graph TD
     style D fill:#ff9800
 ```
 
-### 🚀 GitHub Actions 설정
+### GitHub Actions 설정
 
 #### 자동 배포 워크플로우
 ```yaml
@@ -500,54 +491,23 @@ jobs:
           # 기타 필요한 환경변수들...
 ```
 
-#### Netlify 배포 설정
-```toml
-# netlify.toml
-[build]
-  command = "npm run build"
-  publish = "build/"
+## 모니터링
 
-[build.environment]
-  NODE_VERSION = "16"
+### 핵심 KPI 지표
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+#### 생산 관련 KPI
+- **주간/월간 생산량**: 목표 대비 달성률
+- **품질 지표**: 불량률, 수율, A등급 비율
+- **작업 효율성**: 평균 작업시간, 오버타임 발생률  
+- **협력사 성과**: KPI 점수, 등급 분포
 
-# 환경변수는 Netlify Dashboard에서 설정
-```
+#### 시스템 성능 KPI
+- **API 응답 시간**: 평균 2-3초 이내
+- **AI 봇 정확도**: 시리얼 넘버 조회 99% 정확도
+- **데이터 동기화**: 실시간 업데이트 성공률
+- **대시보드 가용성**: 99.9% 업타임
 
-#### Railway 배포 설정
-```json
-{
-  "build": {
-    "builder": "NIXPACKS"
-  },
-  "deploy": {
-    "startCommand": "python factory_main.py",
-    "healthcheckPath": "/api/health"
-  }
-}
-```
-
-## 📈 모니터링
-
-### 🎯 핵심 KPI 지표
-
-#### 📊 **생산 관련 KPI**
-- 📈 **주간/월간 생산량**: 목표 대비 달성률
-- 🎯 **품질 지표**: 불량률, 수율, A등급 비율
-- ⏰ **작업 효율성**: 평균 작업시간, 오버타임 발생률  
-- 🤝 **협력사 성과**: KPI 점수, 등급 분포
-
-#### 🤖 **시스템 성능 KPI**
-- ⚡ **API 응답 시간**: 평균 2-3초 이내
-- 🎯 **AI 봇 정확도**: 시리얼 넘버 조회 99% 정확도
-- 🔄 **데이터 동기화**: 실시간 업데이트 성공률
-- 📱 **대시보드 가용성**: 99.9% 업타임
-
-### 🔔 알림 시스템
+### 알림 시스템
 
 ```python
 # 통합 알림 설정 예시
@@ -567,9 +527,9 @@ NOTIFICATION_CHANNELS = [
 ]
 ```
 
-## 🛠️ 트러블슈팅
+## 트러블슈팅
 
-### 🔧 공통 문제 해결
+### 공통 문제 해결
 
 #### 1. 데이터베이스 연결 오류
 ```bash
@@ -609,46 +569,7 @@ curl -X POST https://*****.up.railway.app/slack/events
 # - Bot Token Scopes
 ```
 
-#### 4. 프론트엔드 빌드 오류
-```bash
-# 캐시 정리 및 재설치
-rm -rf node_modules package-lock.json
-npm install
-
-# 환경변수 확인
-cat .env
-
-# 빌드 테스트
-npm run build
-```
-
-### 📊 모듈별 트러블슈팅
-
-#### 협력사 평가 대시보드
-```bash
-# 데이터 정합성 확인
-python test_data_integrity.py --verbose
-
-# 백업 시스템 확인  
-python drive_backup_manager.py info
-
-# KPI 계산 검증
-python -m pytest tests/test_kpi_calculation.py
-```
-
-#### ML 예측 시스템
-```bash
-# Teams API 연동 테스트
-python -m data.teams_loader --test
-
-# 모델 재학습
-python main.py --mode retrain
-
-# 예측 정확도 검증
-python -m tests.test_ml_accuracy
-```
-
-## 🤝 기여 가이드
+## 기여 가이드
 
 ### 개발 환경 설정
 ```bash
@@ -684,58 +605,43 @@ ai: AI 관련 개선사항
 dashboard: 대시보드 업데이트
 ```
 
-### Pull Request 가이드
-1. **기능 브랜치** 생성: `feature/기능명`
-2. **테스트** 실행: 모든 테스트 통과 확인
-3. **코드 품질** 검사: linting 및 formatting
-4. **문서 업데이트**: README 및 주석 업데이트
-5. **PR 생성**: 상세한 변경사항 설명
+## 개발 로드맵
 
-## 📝 개발 로드맵
+### Phase별 개발 계획 (2025)
 
-### 🗓️ **Phase별 개발 계획 (2025)**
-
-#### 🔵 **Phase 0: FE개발 & CI/CD 구성** (2025.06-07)
+#### Phase 0: FE개발 & CI/CD 구성 (2025.06-07) ✅
 - **목표**: React 기반 UI + GitHub CI/CD + Auth0 인증 도입
 - **핵심 산출물**: 메인 대시보드 FE구성 및 자동배포
 - **주요 KPI**: 실시간 생산지표, 협력사 평가지수
-- **✅ 완료**: 자동화 배포 파이프라인 구축, Auth0 기반 로그인·권한 인증 적용
+- **완료**: 자동화 배포 파이프라인 구축, Auth0 기반 로그인·권한 인증 적용
 
-#### 🟢 **Phase 1: Defect 분석 대시보드 구축** (2025.06-07)
+#### Phase 1: Defect 분석 대시보드 구축 (2025.06-07) ✅
 - **목표**: 내부용 defect 분석 + 예측 시스템 개발
 - **핵심 산출물**: 중분류/귀책 트리맵 시각화, 불량 예측 모델(TF-IDF/RandomForest)
 - **주요 KPI**: 주간/분기 불량 이슈 인사이트 도출, ML 예측값 실시간 디스플레이
-- **✅ 완료**: 제조기술1팀 공정 통합불량 PG + ML 예측모델 적용
+- **완료**: 제조기술1팀 공정 통합불량 PG + ML 예측모델 적용
 
-#### 🟡 **Phase 2: CT 분석 대시보드 구축** (2025.08)
+#### Phase 2: CT 분석 대시보드 구축 (2025.08) 🔄
 - **목표**: Cycle Time 분석 및 병목 시각화
 - **핵심 산출물**: 모델/공정별 작업시간 시각화, 병목 자동 정렬 UI 구성
-- **주요 KPI**: 모델별/제품코드별 Task시간 시각화, 병목 공정 자동 식별
-- **🔄 진행중**: 모델/제품코드 공정 Task별 CT 시각화, CT 분포 분석 UI설계
+- **주요 KPI**: 모델별/제품코드별 Task시간 시각화, CT 분포 분석 UI설계
+- **진행중**: 모델/제품코드 공정 Task별 CT 시각화
 
-#### 🔵 **Phase 3: 시스템 고도화 준비** (2025.08-09)
+#### Phase 3: 시스템 고도화 준비 (2025.08-09) 📋
 - **목표**: Defect/CT 기준 표준화 및 매핑 완료
 - **핵심 산출물**: 생산 제품 카테고리 정규화, 작업시간 단위 정규화
 - **주요 KPI**: 데이터 매핑률 100% 달성, 전사 적용 기반 확보
-- **📋 예정**: 통합 대시보드 Defect & CT DB 정합성 매핑
 
-#### 🟣 **Phase 4: Slack 챗봇 고도화** (2025.10-12)
+#### Phase 4: Slack 챗봇 고도화 (2025.10-12) 🎯
 - **목표**: 자연어 KPI 질의 응답 + 알림 트리거 세분화
 - **핵심 산출물**: GPT 챗봇 MVP 구축, 주요 KPI(불량률, OT 등) 응답 자동화
-- **주요 KPI**: 응답 시간 ≤ 5초, Slack 현장 대응 속도↑
-- **🎯 목표**: 자연어 기반 KPI 검색, 사내 지표 검색
+- **주요 KPI**: 응답 시간 ≤ 5초, Slack 현장 대응 속도 향상
 
-#### ⭐ **Phase 5: 미래 확장 계획** (2026+)
-- **Slack 챗봇 고도화**: 자연어 질의응답 완전 자동화
-- **Defect 분석 고도화**: ML 예측값 현장 디스플레이 연동
-- **CT 기반 APS 연계**: 생산 계획 시스템 통합
-- **ML 예측값 시각화**: 작업자 즉각적 인지 및 대응 체계
+## ROI 분석
 
-## 💰 ROI 분석
+### 외주 대비 비용 절감 효과
 
-### 🏆 **외주 대비 비용 절감 효과**
-
-#### 📊 **외주 견적 vs 내부 개발**
+#### 외주 견적 vs 내부 개발
 | 항목 | 외주 예상비용 | 내부 구축 | 절감액 |
 |------|-------------|----------|--------|
 | **데이터 자동화 스크립트** | 2,000만원 | ✅ 완료 | 2,000만원 |
@@ -743,16 +649,16 @@ dashboard: 대시보드 업데이트
 | **Flask API 서버 구성** | 2,000만원 | ✅ 완료 | 2,000만원 |
 | **Netlify 시각화 구성** | 2,000만원 | ✅ 완료 | 2,000만원 |
 | **경고/알림 시스템** | 1,000만원 | ✅ 완료 | 1,000만원 |
-| **🎯 총 외주비 절감** | **1억 원** | **내부 구축** | **1억 원** |
+| **총 외주비 절감** | **1억 원** | **내부 구축** | **1억 원** |
 
-#### 💼 **연간 운영 효율 개선**
+#### 연간 운영 효율 개선
 | 항목 | 산출 근거 | 연간 절감액 |
 |------|-----------|------------|
 | **수기 리포트 자동화** | 2시간/일 × 260일 × 30,000원 | **1,560만원** |
 | **장애 대응 시간 단축** | 1시간/월 × 12월 × 30,000원 | **36만원** |
-| **🎯 연간 운영 효율** | | **1,596만원** |
+| **연간 운영 효율** | | **1,596만원** |
 
-#### 🧮 **ROI 계산 결과**
+#### ROI 계산 결과
 ```
 💰 총 효과 (A) = 외주비 절감 + 연간 효율 = 1억원 + 1,596만원 = 11,596만원
 💸 투자비 (B) = 사내 인프라 구성 비용 = 200만원
@@ -761,9 +667,9 @@ dashboard: 대시보드 업데이트
 ⚡ 투자 회수 기간 = 200만원 / (11,596만원 ÷ 12) ≈ 0.2개월 (6일)
 ```
 
-### 🏭 **타 시스템과의 비교**
+### 타 시스템과의 비교
 
-#### 🔍 **품질자동화 시스템 vs 제조기술1팀 시스템**
+#### 품질자동화 시스템 vs 제조기술1팀 시스템
 | 구분 | 검사 자동화 시스템<br/>(외주, 3.5억) | **제조기술1팀 시스템**<br/>(내부 개발, 200만) |
 |------|----------------------------------|----------------------------------------|
 | **구성** | 센서 연동 중심 검사 전용 | **데이터 분석 중심 생산·품질 통합** |
@@ -776,9 +682,9 @@ dashboard: 대시보드 업데이트
 | **개발비** | **3억 5,181만원** | **200만원 + 내부 역량** |
 | **ROI** | - | **⭐ 1억 4천만원 이상 절감** |
 
-## 🎯 기대 효과
+## 기대 효과
 
-### 🔄 **내부 시스템 구축의 4대 핵심 가치**
+### 내부 시스템 구축의 4대 핵심 가치
 
 ```mermaid
 pie title 기대 효과 분포
@@ -788,166 +694,103 @@ pie title 기대 효과 분포
     "확장성 확보" : 20
 ```
 
-#### ⏰ **품질개선 피드백 주기 단축**
+#### 품질개선 피드백 주기 단축
 - **협력사 업무 현황 실시간 파악**: 기존 주간 → 실시간 모니터링
 - **즉각적 대응**: 불량 발생 시 즉시 알림 및 조치 가능
 - **데이터 기반 의사결정**: 정확한 데이터로 신속한 판단 지원
 
-#### 🕒 **시간 절약 및 오류 방지**  
+#### 시간 절약 및 오류 방지
 - **수작업 제거**: Google Sheets & Drive 자동화로 완전 제거
 - **메타DB 자동 수집**: S/N, 오더번호, 마감일 기준 자동 검색
 - **하이퍼링크 자동 삽입**: 수작업 Drive 탐색 및 DB 입력 완전 제거
 
-#### 🛠️ **사내 기술 내재화**
+#### 사내 기술 내재화
 - **외주 의존 최소화**: 모든 시스템을 사내 기술로 구축
 - **지속적 개선**: 실시간 요구사항 반영 및 업데이트 가능
 - **기술 노하우 축적**: DX 역량 강화 및 전사 확산 기반 마련
 
-#### ☁️ **확장성 확보**
+#### 확장성 확보
 - **클라우드 기반 운영**: Flask + Netlify + Railway 무제한 확장
 - **모듈형 아키텍처**: 필요 시 새로운 기능 손쉽게 추가
 - **API 기반 통합**: 타 시스템과의 연동 용이성 확보
 
-### 🌟 **실제 구현 효과**
+### 실제 구현 효과
 
-#### 📊 **협력사와의 실시간 소통**
+#### 협력사와의 실시간 소통
 - **Before**: 주간 회의, 이메일 기반 소통
 - **After**: Slack 챗봇 실시간 질의응답, 즉시 알림
 - **효과**: 품질 문제 대응 시간 **70% 단축**
 
-#### 🤖 **완전 자동화 달성**
+#### 완전 자동화 달성
 - **Google Sheets & Drive 자동화**: 100% 무인 데이터 수집
 - **JSON → SQL 파이프라인**: 데이터 신뢰성 및 분석 기반 확보
 - **REST API + 시각화**: 현장 중심 실시간 정보 제공
 
-#### 🔔 **스마트 알림 시스템**
+#### 스마트 알림 시스템
 - **NaN/OT 발생 시**: 카카오톡 Webhook 자동 전송
 - **Slack 통합**: AI 기반 질의응답 및 향후 고도화 연동
 - **효과**: 이상 상황 실시간 전파 및 대응시간 **80% 단축**
 
-### 🏁 **최종 비전**
+### 최종 비전
 
 > **"이 시스템을 통해 협력사와의 실시간 소통이 가능해지고, 품질 문제에 대한 즉각적인 대응이 가능합니다. 또한 클라우드 기반 인프라를 통해 향후 시스템 확장에도 유연하게 대응할 수 있습니다."**
 
-**🎯 APS 연계, 🤖 완전 자동화, 📊 예측 기반 관리**를 통한 **스마트 팩토리 구현의 초석**
+**APS 연계, 완전 자동화, 예측 기반 관리**를 통한 **스마트 팩토리 구현의 초석**
 
-## 📋 업데이트 히스토리
+## 업데이트 히스토리
 
-### 🚀 **2025년 7월 - 메이저 업데이트 시즌**
+### 2025년 7월 - 메이저 업데이트 시즌
 
-#### v3.1.1 (2025-07-30) 🔧 **협력사 평가 대시보드**
+#### v3.1.1 (2025-07-30) - 협력사 평가 대시보드
 - **29W 데이터 누락 해결**: hover창에서 29주차 데이터 정상 표시
 - **동적 주차 계산 도입**: 하드코딩된 날짜 조건을 ISO 주차 계산으로 개선
 - **7월 27-29주 데이터 검증**: 모든 주차 데이터 정상 입력 확인
 - **NaN 데이터 우려사항 해결**: 재확인 결과 정상 처리 완료
 
-#### v3.1.1 (2025-07-22) 🔧 **GST Factory Pipeline**
+#### v3.1.1 (2025-07-22) - GST Factory Pipeline
 - **SummaryTable 진행률 계산 이슈 해결**: 일정 기준 진행률 0.0% 표시 문제 해결
 - **Frontend App.js 수정**: `/api/factory` 엔드포인트 사용으로 변경
 - **성능 최적화**: 불필요한 `/api/info` 호출 제거
 - **백엔드 수정 불필요**: 기존 엔드포인트 활용으로 추가 개발 없이 해결
 
-#### v2.2.0 (2025-07-21) 🆕 **CT 분석 대시보드 메이저 업데이트**
+#### v2.2.0 (2025-07-21) - CT 분석 대시보드 메이저 업데이트
 - **CT(Cycle Time) 분석 대시보드**: 완전히 새로운 분석 도구 추가
 - **비밀번호 보호 시스템**: 사내 직원 전용 접근 제어 (`gst2025!`)
 - **카테고리별 시간 집계**: 6개 카테고리 분석 (기구, 전장, TMS반제품, 검사, 마무리, 기타)
 - **S/N 기반 상세 정보 조회**: 인터랙티브 드롭다운 및 스프레드시트 연동
 - **순수 HTML/CSS 바차트**: 성능 최적화 및 반응형 디자인
 
-#### v3.1.0 (2025-07-14) 🔧 **데이터 정합성 개선**
-- **진행률 계산 로직 개선**: 핵심 카테고리 기준 진행률 계산
-- **작업 시간 조회 시스템 구축**: 6가지 쿼리 타입으로 포괄적 분석
-- **GPT 기반 자연어 분석**: 작업 시간 관련 질문 자동 분석
-- **완료 프로젝트 필터링**: 100% 완료 프로젝트만 대상 통계 제공
-
-#### v2.1 (2025-07-12) 🤖 **ML 불량 예측 시스템 베타**
-- **7월 생산물량 업데이트**: 96대 → 156대 (+62.5%)
-- **모델 다양성 확대**: 5개 → 10개 모델 (GAIA-II, DRAGON 계열 추가)
-- **동적 분기별 차트**: 7월 데이터 자동 3분기 분류
-- **리팩토링된 분석 모듈**: 3897줄 단일 파일을 5개 모듈로 분할
-
-### 🔄 **2025년 6월 - 시스템 안정화 및 최적화**
-
-#### v2.0 (2025-06-25) 🚀 **출입 관리 시스템 대규모 리팩토링**
-- **프로젝트 구조 완전 개편**: `entry_chart_daily.py`로 메인 파일 변경
-- **최근 7일 자동 날짜 버튼**: 주단위 자동 관리 시스템 구현
-- **협력사별 고유 색상**: 7개 협력사별 고유 색상 시스템 적용
-- **GitHub JSON 기반 시스템**: 실시간 CSV 변환으로 효율성 극대화
-- **중복 데이터 자동 정리**: 하루 5회 실행되어도 안전한 데이터 관리
-- **GitHub 업로드 최적화**: 전체 날짜 → 오늘 날짜만 업로드로 성능 향상
-
-#### v2.1 (2025-06-23) 🔒 **데이터 자동화 시스템 보안 강화**
-- **환경변수 시스템 개선**: `.env` 파일 지원 추가 (python-dotenv)
-- **드라이브 폴더 분리**: JSON/그래프 별도 관리
-- **GitHub 업로드 경로 수정**: public 폴더 업로드
-- **카카오톡 토큰 자동 갱신**: 토큰 만료 자동 처리
-- **하이퍼링크 문제 해결**: =HYPERLINK 공식 사용
-
-### 🎯 **2025년 상반기 - AI 협업 시대 개막**
-
-#### v3.0.0 (2025-07-XX) 🤖 **AI 어시스턴트 도입**
-- **슬랙 봇 AI 어시스턴트**: OpenAI GPT-3.5 기반 지능형 봇
-- **자연어 처리**: 다양한 질문 패턴 지원 및 의도 분석
-- **인터랙티브 메뉴**: 슬랙 Block Kit 기반 버튼 인터페이스
-- **실시간 DB 연동**: PostgreSQL과 연동된 시리얼 넘버 조회
-- **24/7 무중단 서비스**: Railway 호스팅으로 안정적 운영
-
-#### v2.3.0 (2025-07-XX) ✅ **협력사 평가 시스템 고도화**
-- **제품정보 개선**: 제품코드 → 제품S/N 변경으로 추적성 향상
-- **발생일 추가**: 불량 테이블에 발생일 컬럼 추가
-- **NaN 디테일뷰**: 누락률 클릭 시 주간별 추이 테이블 표시
-- **계산 로직 통일**: 호버창과 디테일뷰 누락률 계산 방식 완전 일치
-
-#### v2.2.0 (2025-01-XX) 📚 **통합 문서화**
-- **통합 README 문서 개선**: 시스템 아키텍처 다이어그램 추가
-- **AI 기반 개발 방식 문서화**: 프로젝트 진화 과정 상세 기록
-- **문제 해결 가이드 확장**: 트러블슈팅 섹션 대폭 개선
-
-### 🌱 **2024년 - 기반 시스템 구축**
-
-#### v2.0.0 (2025-05-XX) 🌐 **모던 웹 시스템 전환**
-- **React 대시보드 추가**: 기존 HTML → React 기반 SPA
-- **Auth0 인증 시스템 도입**: JWT 토큰 기반 보안 인증
-- **다중 대시보드 지원**: 공장/협력사/내부 대시보드
-- **PostgreSQL 데이터베이스**: 기존 파일 기반 → DB 기반 시스템
-
-#### v1.0.0 (2025-03-XX) 🔄 **모듈화 시스템 구축**
-- **PDA_partner에서 모듈화**: 단일 파일 → 기능별 모듈 분리
-- **Flask API 서버 구현**: RESTful API 아키텍처 도입
-- **AI 도구 활용 개발 시작**: Claude, ChatGPT 협업 개발 방식
-- **기능별 모듈 분리**: `utils/` 디렉토리 구조 도입
-
-### 📈 **프로젝트 진화 타임라인**
+### 프로젝트 진화 타임라인
 
 ```
 2024년 초      → PDA_partner 단일 스크립트 개발
    ↓
-2025년 3월     → 🚀 베타 운영 시작 (사내 배포)
+2025년 3월     → 베타 운영 시작 (사내 배포)
    ↓            └─ 모듈화 및 API 서버 구축
-2025년 4-5월   → 📊 사용자 피드백 기반 지속적 개선
+2025년 4-5월   → 사용자 피드백 기반 지속적 개선
    ↓            └─ React + Auth0 현대적 웹 시스템
-2025년 6월     → 🔧 시스템 안정화 및 사용성 개선
+2025년 6월     → 시스템 안정화 및 사용성 개선
    ↓            └─ 효율성/편의성 중심 디버깅 및 최적화
-2025년 7월     → ✅ 정식 사내 운영 + AI 어시스턴트 베타
+2025년 7월     → 정식 사내 운영 + AI 어시스턴트 베타
    ↓            └─ 대규모 업데이트 및 고도화 작업
-2025년 8월     → 🎯 AI 챗봇 정식 오픈 (예정)
+2025년 8월     → AI 챗봇 정식 오픈 (예정)
    ↓            └─ 고도화된 통합 시스템 완성
 ```
 
-### 🏆 **주요 마일스톤**
-- **📊 총 6개 모듈**: 단일 스크립트 → **사내 정식 운영 중인** 통합 CI/CD 시스템
-- **🤖 AI 협업**: 전통적 개발 → AI 기반 혁신적 개발 방식
-- **☁️ 클라우드 네이티브**: 로컬 실행 → Railway/Netlify **실서비스 배포**
-- **📱 사용자 중심**: 정적 리포트 → **사용자 피드백 기반** 실시간 대시보드
-- **🔧 지속적 개선**: **3월 베타 → 7월 정식 운영** (4개월간 사용자 경험 최적화)
+### 주요 마일스톤
+- **총 6개 모듈**: 단일 스크립트 → **사내 정식 운영 중인** 통합 CI/CD 시스템
+- **AI 협업**: 전통적 개발 → AI 기반 혁신적 개발 방식
+- **클라우드 네이티브**: 로컬 실행 → Railway/Netlify **실서비스 배포**
+- **사용자 중심**: 정적 리포트 → **사용자 피드백 기반** 실시간 대시보드
+- **지속적 개선**: **3월 베타 → 7월 정식 운영** (4개월간 사용자 경험 최적화)
 
 ---
 
-## 📄 라이선스
+## 라이선스
 
 이 프로젝트는 MIT 라이선스를 따릅니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
 
-## 📞 연락처
+## 연락처
 
 - **프로젝트 기획 및 개발**: TwinfaX2 김동규 (제조기술1팀 / DX TF)
 - **이슈 및 제안**: GitHub Issues 활용
@@ -956,21 +799,21 @@ pie title 기대 효과 분포
 
 ---
 
-## 🎉 특별 감사
+## 특별 감사
 
 이 프로젝트는 **제조업 DX 혁신을 위한 AI 도구들과의 협업**으로 구현되었습니다:
 
-### 🤖 **AI 협업 기반 개발**
+### AI 협업 기반 개발
 - **Claude Sonnet**: 시스템 아키텍처 설계 및 코드 리팩토링
 - **ChatGPT**: 기능 구현 및 문제 해결
 
-### 🏆 **DX TF 혁신 성과**
-- **🚀 Solo E-to-E**: 기획→설계→개발→배포 100% 단독 수행
-- **💰 ROI 7,048%**: 외주 대비 1억 4천만원 절감
-- **⚡ 5일 회수**: 업계 최고 수준 투자 효율
-- **🔧 기술 내재화**: 사내 DX 역량 확보 및 전사 확산
+### DX TF 혁신 성과
+- **Solo E-to-E**: 기획→설계→개발→배포 100% 단독 수행
+- **ROI 7,048%**: 외주 대비 1억 4천만원 절감
+- **5일 회수**: 업계 최고 수준 투자 효율
+- **기술 내재화**: 사내 DX 역량 확보 및 전사 확산
 
-### 🌟 **AI 협업의 혁명**
+### AI 협업의 혁명
 - **6개 통합 시스템**: 단일 스크립트 → 현대적 클라우드 시스템
 - **실시간 운영**: 24/7 무중단 서비스 제공
 - **자연어 인터페이스**: Slack 봇을 통한 혁신적 사용자 경험
@@ -989,8 +832,8 @@ ROI 7,048% 달성한 제조 DX 혁신 프로젝트
 Built by 김동규 / 제조기술1팀 / DX TF
 -->
 
-**🤖 Solo-Engineered with AI Power • GST Manufacturing**
+**Solo-Engineered with AI Power • GST Manufacturing**
 
-**💫 제조업 DX 혁신의 새로운 패러다임을 제시하는 프로젝트입니다!**
+**제조업 DX 혁신의 새로운 패러다임을 제시하는 프로젝트입니다!**
 
 ⭐ **이 프로젝트가 제조업 디지털 혁신에 도움이 되었다면 스타를 눌러주세요!**
