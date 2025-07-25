@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>$title$</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+    <!-- Mermaid CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+        /* 추가 커스텀 스타일 */
+        .markdown-body h1 {
+            border-bottom: 3px solid #4285f4;
+            padding-bottom: 10px;
+        }
+        .markdown-body img[alt*="badge"] {
+            margin: 2px;
+        }
+        /* Mermaid 다이어그램 스타일 */
+        .mermaid {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <article class="markdown-body">
+        $body$
+    </article>
+    
+    <!-- Mermaid 초기화 스크립트 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mermaid 설정
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: 'default',
+                securityLevel: 'loose',
+                themeVariables: {
+                    primaryColor: '#4285f4',
+                    primaryTextColor: '#333',
+                    primaryBorderColor: '#4285f4',
+                    lineColor: '#666',
+                    secondaryColor: '#f5f5f5',
+                    tertiaryColor: '#fff'
+                }
+            });
+            
+            // Markdown 코드 블록에서 Mermaid 다이어그램 찾기 및 변환
+            const codeBlocks = document.querySelectorAll('code');
+            codeBlocks.forEach(function(code) {
+                if (code.textContent.trim().startsWith('graph') || 
+                    code.textContent.trim().startsWith('pie') ||
+                    code.textContent.trim().startsWith('flowchart') ||
+                    code.textContent.trim().startsWith('sequenceDiagram') ||
+                    code.textContent.trim().startsWith('classDiagram') ||
+                    code.textContent.trim().startsWith('gitgraph') ||
+                    code.textContent.trim().startsWith('erDiagram') ||
+                    code.textContent.trim().startsWith('journey') ||
+                    code.textContent.trim().startsWith('gantt') ||
+                    code.textContent.trim().startsWith('stateDiagram') ||
+                    code.textContent.trim().startsWith('mindmap')) {
+                    
+                    // pre 태그도 함께 처리
+                    const parent = code.parentElement;
+                    if (parent && parent.tagName === 'PRE') {
+                        const mermaidDiv = document.createElement('div');
+                        mermaidDiv.className = 'mermaid';
+                        mermaidDiv.textContent = code.textContent;
+                        parent.replaceWith(mermaidDiv);
+                    } else {
+                        const mermaidDiv = document.createElement('div');
+                        mermaidDiv.className = 'mermaid';
+                        mermaidDiv.textContent = code.textContent;
+                        code.replaceWith(mermaidDiv);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
