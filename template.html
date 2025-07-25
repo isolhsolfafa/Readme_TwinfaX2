@@ -32,6 +32,10 @@
         .mermaid {
             text-align: center;
             margin: 20px 0;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            padding: 20px;
+            background: #f8f9fa;
         }
     </style>
 </head>
@@ -42,53 +46,109 @@
     
     <!-- Mermaid 초기화 스크립트 -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mermaid 설정
-            mermaid.initialize({
-                startOnLoad: true,
-                theme: 'default',
-                securityLevel: 'loose',
-                themeVariables: {
-                    primaryColor: '#4285f4',
-                    primaryTextColor: '#333',
-                    primaryBorderColor: '#4285f4',
-                    lineColor: '#666',
-                    secondaryColor: '#f5f5f5',
-                    tertiaryColor: '#fff'
-                }
-            });
-            
-            // Markdown 코드 블록에서 Mermaid 다이어그램 찾기 및 변환
-            const codeBlocks = document.querySelectorAll('code');
-            codeBlocks.forEach(function(code) {
-                if (code.textContent.trim().startsWith('graph') || 
-                    code.textContent.trim().startsWith('pie') ||
-                    code.textContent.trim().startsWith('flowchart') ||
-                    code.textContent.trim().startsWith('sequenceDiagram') ||
-                    code.textContent.trim().startsWith('classDiagram') ||
-                    code.textContent.trim().startsWith('gitgraph') ||
-                    code.textContent.trim().startsWith('erDiagram') ||
-                    code.textContent.trim().startsWith('journey') ||
-                    code.textContent.trim().startsWith('gantt') ||
-                    code.textContent.trim().startsWith('stateDiagram') ||
-                    code.textContent.trim().startsWith('mindmap')) {
-                    
-                    // pre 태그도 함께 처리
-                    const parent = code.parentElement;
-                    if (parent && parent.tagName === 'PRE') {
-                        const mermaidDiv = document.createElement('div');
-                        mermaidDiv.className = 'mermaid';
-                        mermaidDiv.textContent = code.textContent;
-                        parent.replaceWith(mermaidDiv);
-                    } else {
-                        const mermaidDiv = document.createElement('div');
-                        mermaidDiv.className = 'mermaid';
-                        mermaidDiv.textContent = code.textContent;
-                        code.replaceWith(mermaidDiv);
-                    }
-                }
-            });
+        console.log('Mermaid script loading...');
+        
+        // Mermaid 초기화
+        mermaid.initialize({
+            startOnLoad: false,
+            theme: 'default',
+            securityLevel: 'loose'
         });
+
+        function findAndConvertMermaid() {
+            console.log('Looking for Mermaid diagrams...');
+            
+            // 모든 텍스트 노드와 코드 블록 검사
+            const walker = document.createTreeWalker(
+                document.body,
+                NodeFilter.SHOW_TEXT,
+                null,
+                false
+            );
+
+            const textNodes = [];
+            let node;
+            while (node = walker.nextNode()) {
+                textNodes.push(node);
+            }
+
+            // 코드 블록도 별도로 검사
+            const codeElements = document.querySelectorAll('code, pre');
+            
+            console.log(`Found ${textNodes.length} text nodes and ${codeElements.length} code elements`);
+
+            let converted = 0;
+
+            // 텍스트 노드에서 Mermaid 찾기
+            textNodes.forEach(textNode => {
+                const text = textNode.textContent.trim();
+                if (text.startsWith('graph ') || 
+                    text.startsWith('pie ') || 
+                    text.startsWith('flowchart ') ||
+                    text.startsWith('subgraph ')) {
+                    
+                    console.log('Found Mermaid in text node:', text.substring(0, 30));
+                    
+                    const mermaidDiv = document.createElement('div');
+                    mermaidDiv.className = 'mermaid';
+                    mermaidDiv.textContent = text;
+                    
+                    textNode.parentNode.replaceChild(mermaidDiv, textNode);
+                    converted++;
+                }
+            });
+
+            // 코드 요소에서 Mermaid 찾기
+            codeElements.forEach(codeElement => {
+                const text = codeElement.textContent.trim();
+                if (text.startsWith('graph ') || 
+                    text.startsWith('pie ') || 
+                    text.startsWith('flowchart ') ||
+                    text.startsWith('subgraph ')) {
+                    
+                    console.log('Found Mermaid in code element:', text.substring(0, 30));
+                    
+                    const mermaidDiv = document.createElement('div');
+                    mermaidDiv.className = 'mermaid';
+                    mermaidDiv.textContent = text;
+                    
+                    // pre 태그 안의 code라면 pre를 교체
+                    if (codeElement.parentElement && codeElement.parentElement.tagName === 'PRE') {
+                        codeElement.parentElement.parentNode.replaceChild(mermaidDiv, codeElement.parentElement);
+                    } else {
+                        codeElement.parentNode.replaceChild(mermaidDiv, codeElement);
+                    }
+                    converted++;
+                }
+            });
+
+            console.log(`Converted ${converted} Mermaid diagrams`);
+
+            if (converted > 0) {
+                // Mermaid 렌더링
+                mermaid.run().then(() => {
+                    console.log('✅ Mermaid rendering completed successfully!');
+                }).catch(err => {
+                    console.error('❌ Mermaid rendering failed:', err);
+                });
+            } else {
+                console.log('ℹ️ No Mermaid diagrams found to convert');
+            }
+        }
+
+        // 여러 시점에서 실행하여 확실히 처리
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', findAndConvertMermaid);
+        } else {
+            findAndConvertMermaid();
+        }
+
+        window.addEventListener('load', () => {
+            setTimeout(findAndConvertMermaid, 500);
+        });
+
+        // 마지막 안전장치
+        setTimeout(findAndConvertMermaid, 1000);
     </script>
 </body>
 </html>

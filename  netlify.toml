@@ -4,6 +4,12 @@
       --template=template.html \
       --css=style.css \
       --metadata title="제조 DX 통합 자동화 시스템 - 김동규 포트폴리오" \
+      --filter pandoc-mermaid \
+      -o index.html README.md || \
+    pandoc -f markdown -t html --standalone \
+      --template=template.html \
+      --css=style.css \
+      --metadata title="제조 DX 통합 자동화 시스템 - 김동규 포트폴리오" \
       -o index.html README.md
   """
   publish = "."
