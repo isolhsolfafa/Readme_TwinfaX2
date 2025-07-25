@@ -46,7 +46,7 @@
     
     <!-- Mermaid 초기화 스크립트 -->
     <script>
-        console.log('Mermaid script loading...');
+        console.log('🚀 Mermaid 변환 스크립트 시작');
         
         // Mermaid 초기화
         mermaid.initialize({
@@ -55,100 +55,109 @@
             securityLevel: 'loose'
         });
 
-        function findAndConvertMermaid() {
-            console.log('Looking for Mermaid diagrams...');
+        function findMermaidAndConvert() {
+            console.log('🔍 HTML 전체 검사 시작...');
             
-            // 모든 텍스트 노드와 코드 블록 검사
-            const walker = document.createTreeWalker(
-                document.body,
-                NodeFilter.SHOW_TEXT,
-                null,
-                false
-            );
-
-            const textNodes = [];
-            let node;
-            while (node = walker.nextNode()) {
-                textNodes.push(node);
-            }
-
-            // 코드 블록도 별도로 검사
-            const codeElements = document.querySelectorAll('code, pre');
+            // 전체 HTML에서 Mermaid 패턴 찾기
+            let htmlContent = document.body.innerHTML;
+            console.log('📄 HTML 내용 길이:', htmlContent.length);
             
-            console.log(`Found ${textNodes.length} text nodes and ${codeElements.length} code elements`);
-
-            let converted = 0;
-
-            // 텍스트 노드에서 Mermaid 찾기
-            textNodes.forEach(textNode => {
-                const text = textNode.textContent.trim();
-                if (text.startsWith('graph ') || 
-                    text.startsWith('pie ') || 
-                    text.startsWith('flowchart ') ||
-                    text.startsWith('subgraph ')) {
+            // Mermaid 다이어그램 패턴들
+            const patterns = [
+                /graph\s+TB[\s\S]*?(?=<\/code>|<\/pre>|\n\n|$)/gi,
+                /graph\s+LR[\s\S]*?(?=<\/code>|<\/pre>|\n\n|$)/gi,
+                /pie\s+title[\s\S]*?(?=<\/code>|<\/pre>|\n\n|$)/gi,
+                /subgraph[\s\S]*?end/gi,
+                /flowchart[\s\S]*?(?=<\/code>|<\/pre>|\n\n|$)/gi
+            ];
+            
+            let foundDiagrams = 0;
+            
+            patterns.forEach((pattern, index) => {
+                const matches = htmlContent.match(pattern);
+                if (matches) {
+                    console.log(`✅ 패턴 ${index + 1}에서 ${matches.length}개 다이어그램 발견`);
+                    foundDiagrams += matches.length;
                     
-                    console.log('Found Mermaid in text node:', text.substring(0, 30));
-                    
-                    const mermaidDiv = document.createElement('div');
-                    mermaidDiv.className = 'mermaid';
-                    mermaidDiv.textContent = text;
-                    
-                    textNode.parentNode.replaceChild(mermaidDiv, textNode);
-                    converted++;
+                    matches.forEach((match, i) => {
+                        console.log(`📊 다이어그램 ${i + 1}:`, match.substring(0, 50) + '...');
+                        
+                        // HTML에서 해당 부분을 Mermaid div로 교체
+                        const mermaidHtml = `<div class="mermaid">${match}</div>`;
+                        htmlContent = htmlContent.replace(match, mermaidHtml);
+                    });
                 }
             });
-
-            // 코드 요소에서 Mermaid 찾기
-            codeElements.forEach(codeElement => {
-                const text = codeElement.textContent.trim();
-                if (text.startsWith('graph ') || 
-                    text.startsWith('pie ') || 
-                    text.startsWith('flowchart ') ||
-                    text.startsWith('subgraph ')) {
-                    
-                    console.log('Found Mermaid in code element:', text.substring(0, 30));
-                    
-                    const mermaidDiv = document.createElement('div');
-                    mermaidDiv.className = 'mermaid';
-                    mermaidDiv.textContent = text;
-                    
-                    // pre 태그 안의 code라면 pre를 교체
-                    if (codeElement.parentElement && codeElement.parentElement.tagName === 'PRE') {
-                        codeElement.parentElement.parentNode.replaceChild(mermaidDiv, codeElement.parentElement);
-                    } else {
-                        codeElement.parentNode.replaceChild(mermaidDiv, codeElement);
-                    }
-                    converted++;
-                }
-            });
-
-            console.log(`Converted ${converted} Mermaid diagrams`);
-
-            if (converted > 0) {
-                // Mermaid 렌더링
-                mermaid.run().then(() => {
-                    console.log('✅ Mermaid rendering completed successfully!');
-                }).catch(err => {
-                    console.error('❌ Mermaid rendering failed:', err);
-                });
+            
+            if (foundDiagrams > 0) {
+                console.log(`🎯 총 ${foundDiagrams}개 다이어그램 변환 완료`);
+                document.body.innerHTML = htmlContent;
+                
+                // Mermaid 렌더링 실행
+                setTimeout(() => {
+                    mermaid.run().then(() => {
+                        console.log('✨ Mermaid 렌더링 성공!');
+                    }).catch(err => {
+                        console.error('❌ Mermaid 렌더링 실패:', err);
+                    });
+                }, 100);
             } else {
-                console.log('ℹ️ No Mermaid diagrams found to convert');
+                console.log('❌ Mermaid 다이어그램을 찾을 수 없습니다');
+                
+                // 디버깅: 코드 블록 내용 확인
+                const codeBlocks = document.querySelectorAll('code, pre');
+                console.log(`🔧 디버깅: ${codeBlocks.length}개 코드 블록 발견`);
+                
+                codeBlocks.forEach((block, i) => {
+                    const text = block.textContent.trim();
+                    if (text.length > 10) {
+                        console.log(`📝 코드 블록 ${i + 1} (${text.length} chars):`, text.substring(0, 100));
+                        
+                        // 강제로 graph 또는 pie로 시작하는 것들 변환
+                        if (text.includes('graph TB') || text.includes('graph LR') || text.includes('pie title')) {
+                            console.log('🎯 강제 변환 시도:', text.substring(0, 30));
+                            
+                            const mermaidDiv = document.createElement('div');
+                            mermaidDiv.className = 'mermaid';
+                            mermaidDiv.textContent = text;
+                            
+                            if (block.parentElement && block.parentElement.tagName === 'PRE') {
+                                block.parentElement.parentNode.replaceChild(mermaidDiv, block.parentElement);
+                            } else {
+                                block.parentNode.replaceChild(mermaidDiv, block);
+                            }
+                            
+                            foundDiagrams++;
+                        }
+                    }
+                });
+                
+                if (foundDiagrams > 0) {
+                    console.log(`🔄 강제 변환으로 ${foundDiagrams}개 다이어그램 처리`);
+                    setTimeout(() => {
+                        mermaid.run().then(() => {
+                            console.log('✨ 강제 변환 후 Mermaid 렌더링 성공!');
+                        }).catch(err => {
+                            console.error('❌ 강제 변환 후 렌더링 실패:', err);
+                        });
+                    }, 100);
+                }
             }
         }
 
-        // 여러 시점에서 실행하여 확실히 처리
+        // 여러 시점에서 실행
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', findAndConvertMermaid);
+            document.addEventListener('DOMContentLoaded', findMermaidAndConvert);
         } else {
-            findAndConvertMermaid();
+            findMermaidAndConvert();
         }
 
         window.addEventListener('load', () => {
-            setTimeout(findAndConvertMermaid, 500);
+            setTimeout(findMermaidAndConvert, 500);
         });
 
-        // 마지막 안전장치
-        setTimeout(findAndConvertMermaid, 1000);
+        // 최후의 수단
+        setTimeout(findMermaidAndConvert, 2000);
     </script>
 </body>
 </html>

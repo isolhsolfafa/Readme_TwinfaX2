@@ -1,16 +1,18 @@
 [build]
   command = """
-    pandoc -f markdown -t html --standalone \
-      --template=template.html \
-      --css=style.css \
-      --metadata title="제조 DX 통합 자동화 시스템 - 김동규 포트폴리오" \
-      --filter pandoc-mermaid \
-      -o index.html README.md || \
+    # Mermaid 코드 블록을 div로 사전 변환
+    sed -i.bak 's/```mermaid/<div class="mermaid">/g' README.md
+    sed -i.bak 's/```$/<\/div>/g' README.md
+    
+    # Pandoc으로 HTML 변환
     pandoc -f markdown -t html --standalone \
       --template=template.html \
       --css=style.css \
       --metadata title="제조 DX 통합 자동화 시스템 - 김동규 포트폴리오" \
       -o index.html README.md
+    
+    # 원본 파일 복원
+    mv README.md.bak README.md
   """
   publish = "."
 
