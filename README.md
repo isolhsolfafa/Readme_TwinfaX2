@@ -94,120 +94,42 @@ GST 공장의 **제조 데이터를 실시간으로 수집, 분석, 시각화**�
 
 ### 시스템 아키텍처
 
-<div class="system-architecture">
-  <style>
-    .system-architecture {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin: 30px 0;
-      padding: 20px;
-      background: #f8f9fa;
-      border-radius: 12px;
-      border: 1px solid #e9ecef;
-    }
+```mermaid
+graph TB
+    subgraph A ["데이터 수집"]
+        GS["Google Sheets<br/>데이터 수집"]
+        GT["Google Drive<br/>JSON DB 생성"]
+    end
     
-    .arch-module {
-      background: white;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      text-align: center;
-      position: relative;
-    }
+    subgraph B ["데이터베이스"]
+        PG["PostgreSQL<br/>Railway 클라우드"]
+        API["Flask API 서버<br/>RESTful 구조"]
+    end
     
-    .arch-module h4 {
-      margin: 0 0 15px 0;
-      font-size: 16px;
-      font-weight: 600;
-    }
+    subgraph C ["시각화"]
+        NF["Netlify Dashboard<br/>실시간 시각화"]
+        GH["GitHub<br/>코드 버전 관리"]
+    end
     
-    .arch-module .components {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+    subgraph D ["알림&조회"]
+        SL["Slack 챗봇<br/>KPI 질의응답"]
+        KA["Kakao 알림<br/>실시간 알림"]
+    end
     
-    .component {
-      background: #f8f9fa;
-      padding: 8px 12px;
-      border-radius: 4px;
-      font-size: 13px;
-      border-left: 3px solid #dee2e6;
-    }
+    GS --> PG
+    GT --> PG
+    PG --> API
+    API --> NF
+    API --> SL
+    API --> KA
+    GH --> NF
     
-    .data-collection { border-color: #4285F4; }
-    .data-collection .component { border-left-color: #4285F4; }
-    
-    .database { border-color: #336791; }
-    .database .component { border-left-color: #336791; }
-    
-    .visualization { border-color: #00C7B7; }
-    .visualization .component { border-left-color: #00C7B7; }
-    
-    .notification { border-color: #4A154B; }
-    .notification .component { border-left-color: #4A154B; }
-    
-    .flow-arrow {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      color: #6c757d;
-      grid-column: span 4;
-      margin: 10px 0;
-    }
-    
-    @media (max-width: 768px) {
-      .system-architecture {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        padding: 15px;
-      }
-      
-      .flow-arrow {
-        grid-column: span 1;
-        transform: rotate(90deg);
-      }
-    }
-  </style>
-  
-  <div class="arch-module data-collection">
-    <h4>📊 데이터 수집</h4>
-    <div class="components">
-      <div class="component">Google Sheets<br/>데이터 수집</div>
-      <div class="component">Google Drive<br/>JSON DB 생성</div>
-    </div>
-  </div>
-  
-  <div class="arch-module database">
-    <h4>🗄️ 데이터베이스</h4>
-    <div class="components">
-      <div class="component">PostgreSQL<br/>Railway 클라우드</div>
-      <div class="component">Flask API 서버<br/>RESTful 구조</div>
-    </div>
-  </div>
-  
-  <div class="arch-module visualization">
-    <h4>📱 시각화</h4>
-    <div class="components">
-      <div class="component">Netlify Dashboard<br/>실시간 시각화</div>
-      <div class="component">GitHub<br/>코드 버전 관리</div>
-    </div>
-  </div>
-  
-  <div class="arch-module notification">
-    <h4>🔔 알림&조회</h4>
-    <div class="components">
-      <div class="component">Slack 챗봇<br/>KPI 질의응답</div>
-      <div class="component">Kakao 알림<br/>실시간 알림</div>
-    </div>
-  </div>
-</div>
-
-<div style="text-align: center; margin: 20px 0; font-size: 14px; color: #6c757d;">
-  <strong>데이터 흐름:</strong> Google Sheets → PostgreSQL → API → 대시보드 & 알림
-</div>
+    style GS fill:#4285F4
+    style PG fill:#336791
+    style API fill:#000000
+    style NF fill:#00C7B7
+    style SL fill:#4A154B
+```
 
 **Slack 챗봇은 Flask API와 직접 연동되어 주요 KPI 질의·응답 및 알림 기능을 수행**
 
