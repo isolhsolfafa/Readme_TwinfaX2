@@ -80,7 +80,7 @@ graph LR
 ```
 🔄 ETL 파이프라인: Google Sheets → PostgreSQL → React 대시보드
 🤖 슬랙 봇 AI: OpenAI GPT-3.5 기반 지능형 어시스턴트
-🌐 다중 대시보드: 공장/협력사/내부 대시보드 지원
+🌐 다중 대시보드: 공장/협력사/내부 대시보드 지원/CT 분석
 ```
 
 **실제 서비스:**
