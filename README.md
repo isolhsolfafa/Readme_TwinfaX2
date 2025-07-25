@@ -94,55 +94,37 @@ GST 공장의 **제조 데이터를 실시간으로 수집, 분석, 시각화**�
 
 ### 시스템 아키텍처
 
-```mermaid
-graph TB
-    subgraph A ["데이터 수집"]
-        GS["Google Sheets<br/>데이터 수집"]
-        GT["Google Drive<br/>JSON DB 생성"]
-    end
-    
-    subgraph B ["데이터베이스"]
-        PG["PostgreSQL<br/>Railway 클라우드"]
-        API["Flask API 서버<br/>RESTful 구조"]
-    end
-    
-    subgraph C ["시각화"]
-        NF["Netlify Dashboard<br/>실시간 시각화"]
-        GH["GitHub<br/>코드 버전 관리"]
-    end
-    
-    subgraph D ["알림&조회"]
-        SL["Slack 챗봇<br/>KPI 질의응답"]
-        KA["Kakao 알림<br/>실시간 알림"]
-    end
-    
-    GS --> PG
-    GT --> PG
-    PG --> API
-    API --> NF
-    API --> SL
-    API --> KA
-    GH --> NF
-    
-    style GS fill:#4285F4
-    style PG fill:#336791
-    style API fill:#000000
-    style NF fill:#00C7B7
-    style SL fill:#4A154B
+```
+┌─────────────────────┐    ┌─────────────────────┐
+│    📊 데이터 수집    │    │   💾 데이터베이스   │
+│                     │    │                     │
+│  Google Sheets      │───▶│  PostgreSQL         │
+│  데이터 수집        │    │  Railway 클라우드   │
+│                     │    │                     │
+│  Google Drive       │───▶│  Flask API 서버     │
+│  JSON DB 생성       │    │  RESTful 구조       │
+└─────────────────────┘    └─────────────────────┘
+           │                           │
+           ▼                           ▼
+┌─────────────────────┐    ┌─────────────────────┐
+│     📱 시각화       │◀───│   🔔 알림&조회      │
+│                     │    │                     │
+│  Netlify Dashboard  │    │  Slack 챗봇         │
+│  실시간 시각화      │    │  KPI 질의응답       │
+│                     │    │                     │
+│  GitHub             │    │  Kakao 알림         │
+│  코드 버전 관리     │    │  실시간 알림        │
+└─────────────────────┘    └─────────────────────┘
 ```
 
-**Slack 챗봇은 Flask API와 직접 연동되어 주요 KPI 질의·응답 및 알림 기능을 수행**
+**🤖 Slack 챗봇은 Flask API와 직접 연동되어 주요 KPI 질의·응답 및 알림 기능을 수행**
 
-```mermaid
-graph LR
-    A[PDA_partner<br/>초기 스크립트] --> B[모듈화<br/>구조화]
-    B --> C[API 서버<br/>React 대시보드]
-    C --> D[AI 어시스턴트<br/>클라우드 배포]
-    
-    style A fill:#ffeb3b
-    style B fill:#ff9800
-    style C fill:#4caf50
-    style D fill:#2196f3
+### 프로젝트 진화 과정
+
+```
+📝 PDA_partner        🔧 모듈화           🚀 API 서버         🤖 AI 어시스턴트
+초기 스크립트     ──▶  구조화        ──▶  React 대시보드  ──▶  클라우드 배포
+  (2024 초)           (2025.3)           (2025.4-5)         (2025.7-)
 ```
 
 ### 핵심 특징
