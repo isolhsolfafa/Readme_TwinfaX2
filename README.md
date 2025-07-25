@@ -427,8 +427,8 @@ python internal_main.py
 DB_USER=your_db_user
 DB_PASS=your_db_password
 DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=gst_factory_db
+DB_PORT=*****
+DB_NAME=*****
 
 # API 서버 설정
 PORT=5001
@@ -439,11 +439,11 @@ AUTH0_DOMAIN=your-auth0-domain.auth0.com
 API_IDENTIFIER=your-api-identifier
 
 # 슬랙 봇 설정
-SLACK_BOT_TOKEN=xoxb-your-slack-bot-token
+SLACK_BOT_TOKEN=*****-slack-bot-token
 SLACK_SIGNING_SECRET=your-slack-signing-secret
 
 # OpenAI API 설정
-OPENAI_API_KEY=sk-proj-your-openai-api-key
+OPENAI_API_KEY=*****
 
 # Google API 설정
 SPREADSHEET_ID=your-spreadsheet-id
@@ -614,7 +614,7 @@ REACT_APP_API_BASE_URL=http://localhost:5001
 - 협력사별 진행률 중심
 
 ### 🔒 내부 대시보드 (`/internal`)
-- 비밀번호 "0979" 보호
+- 비밀번호 "*****" 보호
 - iframe으로 `internal.html` 로드
 - 관리자용 상세 분석 기능
 
@@ -673,11 +673,11 @@ railway deploy
 DATABASE_URL=postgresql://user:pass@host:port/db
 
 # 슬랙 봇
-SLACK_BOT_TOKEN=xoxb-9100628124995-9154114902480-...
-SLACK_SIGNING_SECRET=c04c411a287e899071c1e3170c407071
+SLACK_BOT_TOKEN=*****-...
+SLACK_SIGNING_SECRET=*****
 
 # OpenAI
-OPENAI_API_KEY=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
+OPENAI_API_KEY=*****
 
 # 기타 환경 변수
 AUTH0_DOMAIN=your-domain.auth0.com
@@ -687,10 +687,10 @@ API_IDENTIFIER=your-api-identifier
 #### 3. 슬랙 앱 설정
 ```bash
 # Event Subscriptions
-Request URL: https://*****.up.railway.app/slack/events
+Request URL: https://*****/events
 
 # Interactive Components  
-Request URL: https://*****.up.railway.app/slack/interactive
+Request URL: https://*****/slack/interactive
 
 # OAuth & Permissions
 Bot Token Scopes:
@@ -1033,7 +1033,7 @@ python -m pytest tests/integration/ -v
 
 #### 🎯 **신규 기능 추가**
 - **CT(Cycle Time) 분석 대시보드**: 완전히 새로운 분석 도구 추가
-  - 🔒 **비밀번호 보호 시스템**: 사내 직원 전용 접근 제어 (`gst2025!`)
+  - 🔒 **비밀번호 보호 시스템**: 사내 직원 전용 접근 제어 (`*****`)
   - 📊 **카테고리별 시간 집계**: 6개 카테고리 (기구, 전장, TMS반제품, 검사, 마무리, 기타)
   - 🎨 **순수 HTML/CSS 바차트**: Recharts 의존성 제거로 성능 최적화
   - 📱 **반응형 디자인**: 모바일/태블릿 완벽 대응
