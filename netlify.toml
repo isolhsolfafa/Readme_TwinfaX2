@@ -2,7 +2,7 @@
   command = """
     pandoc -f markdown -t html -s -o index.html README.md \
       --css=style.css \
-      --metadata title="제조 DX 통합 자동화 시스템 - 김동규 포트폴리오" \
+      --metadata title="👋👋" \
       -V 'header-includes=<meta name="viewport" content="width=device-width, initial-scale=1">' \
       -V 'include-before=<div class="markdown-body">' \
       -V 'include-after=</div>'
