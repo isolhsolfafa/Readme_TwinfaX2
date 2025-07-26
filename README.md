@@ -14,15 +14,6 @@
 [![▶ Dashboard Demo](https://img.shields.io/badge/Dashboard_Demo-YouTube-FF0000?style=flat-square&logo=youtube)](https://youtu.be/esTtmO8jM_k)  
 [![▶ Slack Bot Demo](https://img.shields.io/badge/Slack_Bot_Demo-YouTube-FF0000?style=flat-square&logo=youtube)](https://youtube.com/shorts/sjsWLC4aH50?feature=share)  
 
-## 📊 ROI 7,048% 달성
-**내부개발 역량 활용 + 비용 절감 효과**
-
-```
-💰 외주 대비 절감: 1억 4,096만원
-⚡ 투자 회수 기간: 5일 이내  
-📈 연간 운영 효율: 1,596만원 추가 절감
-🏆 Solo E-to-E 개발: 기획→설계→개발→배포 100% 내부 역량
-```
 
 <!-- 
 공개용 README 파일입니다.
