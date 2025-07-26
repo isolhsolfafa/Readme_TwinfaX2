@@ -1,4 +1,4 @@
-# 제조 DX 통합 자동화 시스템
+# 🏭 제조 DX 통합 자동화 시스템 - 김동규 포트폴리오
 
 > **AI 협업 기반으로 구축된 현대적 제조업 데이터 파이프라인 및 모니터링 시스템**
 
@@ -16,10 +16,6 @@
 
 ## 📊 ROI 7,048% 달성
 **내부개발 역량 활용 + 비용 절감 효과**
-
-<div align="center">
-  <img src="images/roi-analysis.png" alt="ROI 7,048% 달성 분석" width="700"/>
-</div>
 
 ```
 💰 외주 대비 절감: 1억 4,096만원
@@ -50,11 +46,6 @@
 ## 시스템 개요
 
 ## 기술 스택
-
-<div align="center">
-  <img src="images/tech-stack.png" alt="기술 스택 인포그래픽" width="800"/>
-  <p><em>Full-Stack 개발에 사용된 주요 기술들</em></p>
-</div>
 
 ### Backend
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
