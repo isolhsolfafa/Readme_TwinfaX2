@@ -94,7 +94,7 @@ GST 공장의 **제조 데이터를 실시간으로 수집, 분석, 시각화**�
 
 <div align="center">
   <img src="images/project-timeline.png" alt="프로젝트 진화 타임라인" width="800"/>
-  <p><em><strong>프로젝트 진화 과정 (2024년 → 2025년)</strong></em></p>
+  <p><em><strong>프로젝트 진화 과정 (2025년 1분기 → 2025년 3분기)</strong></em></p>
 </div>
 
 ### 핵심 특징
