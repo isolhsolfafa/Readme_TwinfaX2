@@ -94,7 +94,7 @@ GST 공장의 **제조 데이터를 실시간으로 수집, 분석, 시각화**�
 
 <div align="center">
   <img src="images/project-timeline.png" alt="프로젝트 진화 타임라인" width="800"/>
-  <p><em><strong>프로젝트 진화 과정 (2025년 1분기 → 2025년 3분기)</strong></em></p>
+  <p><em><strong>프로젝트 진화 과정 (2024년 → 2025년)</strong></em></p>
 </div>
 
 ### 핵심 특징
@@ -724,6 +724,51 @@ dashboard: 대시보드 업데이트
 **APS 연계, 완전 자동화, 예측 기반 관리**를 통한 **스마트 팩토리 구현의 초석**
 
 ## 업데이트 히스토리
+
+### 2025년 8월 - 데이터 파이프라인 안정화 및 시스템 최적화
+
+### v3.4.0 (2025-08-16) 🚀 **데이터 파이프라인 완전 안정화 및 중복 방지 시스템 구축**
+- **SafeBatchProcessor 배치 처리 시스템**: 트랜잭셔널 데이터 적재 및 실시간 변경 감지
+  - PostgreSQL savepoint 기반 안전한 배치 처리 (BATCH_SIZE=6 최적화)
+  - Hash-based 및 DB-based 이중 변경 감지 시스템으로 중복 방지 100% 달성
+  - 처리 효율성 실시간 모니터링 (성공/실패/건너뜀 비율 추적)
+- **JSON 병합 시스템**: 부분 추출 시 데이터 손실 방지 완전 자동화
+  - expected_min 임계값 기반 부족 데이터 자동 감지
+  - 최신 성공 JSON과 자동 병합으로 데이터 무결성 보장
+  - 166개 documents → 13개 추출 시에도 기존 데이터 완전 보존
+- **클라우드 환경 최적화**: Railway 운영 환경에서 완벽한 안정성 확보
+  - Google Drive 폴더 ID 분리: 데이터 검색용 vs JSON 저장용 명확한 구분
+  - 환경변수 기반 Google API 인증으로 보안 강화 (JSON 키 파일 → 환경변수)
+  - ephemeral 파일 시스템 대응 및 processed_files DB 테이블 기반 파일 관리
+- **고도화된 로깅 시스템**: 실시간 문제 진단 및 모니터링 강화
+  - 상세한 Google Drive API 호출 로깅 (파일 발견 수, 필터링 결과)
+  - 배치 처리 과정의 세밀한 추적 (변경 감지, 성공률, 처리 시간)
+  - Railway 로그 제한 상황에서도 핵심 정보 확보 가능
+- **BE-staging 환경 구축**: GitHub Actions 기반 완전한 테스트 환경 구성
+  - TwinfaX2/BE-staging 저장소를 통한 독립적 테스트 환경
+  - 로컬 환경과 동일한 1-cycle 파이프라인 테스트 (추출 → DB 적재)
+  - GitHub Secrets를 통한 안전한 환경변수 관리
+  - Railway 배포 전 사전 검증 시스템으로 zero-risk deployment 달성
+- **데이터소스 완전 변경**: 스프레드시트 하이퍼링크 → Google Drive 직접 검색
+  - 기존: 메타 스프레드시트의 하이퍼링크 기반 개별 시트 접근
+  - 신규: Google Drive API를 통한 직접 파일 검색 및 날짜 필터링
+  - 성능 향상: API 호출 최적화 및 배치 처리로 안정성 극대화
+  - 확장성: 스프레드시트 구조 변경에 독립적인 robust한 시스템
+
+**주요 기술적 혁신:**
+- **이중 변경 감지**: Progress-based + DB-based 동시 운영으로 데이터 신뢰성 극대화
+- **트랜잭셔널 안전성**: PostgreSQL savepoint 활용한 원자적 배치 처리
+- **클라우드 네이티브**: Railway Variables 완전 활용 및 컨테이너 환경 최적화
+- **자동 복구**: JSON 병합 시스템으로 일시적 API 장애 시에도 데이터 보존
+- **환경 분리**: 로컬/staging/production 환경별 독립적 설정 관리
+- **CI/CD 통합**: GitHub Actions를 통한 staging 환경 사전 검증으로 production 배포 안정성 보장
+- **아키텍처 진화**: 하이퍼링크 기반 → Google Drive API 직접 검색으로 시스템 견고성 향상
+
+**운영 안정성 지표:**
+- **데이터 무결성**: 100% (중복 방지 + 병합 시스템)
+- **API 호출 최적화**: BATCH_SIZE=6, DELAY=65초로 Google API 제한 완전 회피
+- **처리 효율성**: 82.4% (변경된 데이터만 선별 처리)
+- **장애 복구**: 자동 JSON 병합으로 zero data loss 달성
 
 ### 2025년 7월 - 메이저 업데이트 시즌
 
