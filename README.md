@@ -24,6 +24,8 @@
 ## 목차
 
 - [시스템 개요](#시스템-개요)
+  - [시스템 아키텍처](#시스템-아키텍처)
+  - [상세 아키텍처 다이어그램 (v3.4.0)](#상세-아키텍처-다이어그램-v340)
 - [모듈별 구성](#모듈별-구성)
 - [AI 어시스턴트](#ai-어시스턴트)
 - [설치 가이드](#설치-가이드)
@@ -43,6 +45,9 @@
 ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?style=for-the-badge&logo=sqlalchemy&logoColor=white)
+![Google_Drive_API](https://img.shields.io/badge/Google_Drive_API-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)
+![Batch_Processing](https://img.shields.io/badge/Batch_Processing-28a745?style=for-the-badge&logoColor=white)
+![JSON_Merger](https://img.shields.io/badge/JSON_Merger-28a745?style=for-the-badge&logoColor=white)
 ![Auth0](https://img.shields.io/badge/Auth0-EB5424?style=for-the-badge&logo=auth0&logoColor=white)
 
 ### Frontend
@@ -86,11 +91,28 @@ GST 공장의 **제조 데이터를 실시간으로 수집, 분석, 시각화**�
 ### 시스템 아키텍처
 
 <div align="center">
-  <img src="images/system-architecture(v3.4.0).png" alt="시스템 아키텍처" width="900"/>
+  <img src="images/system-architecture.png" alt="시스템 아키텍처" width="900"/>
   <p><em><strong>GST 제조 DX 통합 자동화 시스템 아키텍처</strong></em></p>
 </div>
 
 **Slack 챗봇은 Flask API와 직접 연동되어 주요 KPI 질의·응답 및 알림 기능을 수행**
+
+#### **📊 상세 아키텍처 다이어그램 (v3.4.0)**
+
+<div align="center">
+  <img src="images/data-flow-detail.png" alt="데이터 플로우 상세" width="900"/>
+  <p><em><strong>v3.4.0 데이터 플로우 상세 - JSON 병합 + 이중 변경감지 + 트랜잭셔널 안전성</strong></em></p>
+</div>
+
+<div align="center">
+  <img src="images/module-dependency.png" alt="모듈별 의존성" width="900"/>
+  <p><em><strong>모듈별 의존성 v3.4.0 - 새로운 utils 모듈들과 3-tier 환경 반영</strong></em></p>
+</div>
+
+<div align="center">
+  <img src="images/core-functions.png" alt="핵심 기능 중심" width="900"/>
+  <p><em><strong>핵심 기능 중심 v3.4.0 - API 최적화 + 트랜잭셔널 안전성 + 자동복구 시스템</strong></em></p>
+</div>
 
 <div align="center">
   <img src="images/project-timeline.png" alt="프로젝트 진화 타임라인" width="800"/>
@@ -416,7 +438,7 @@ Request URL: https://*****.up.railway.app/slack/interactive
 ### 배포 전략
 
 <div align="center">
-  <img src="images/cicd-pipeline(v3.4.0).png" alt="CI/CD 파이프라인 배포 전략" width="750"/>
+  <img src="images/cicd-pipeline.png" alt="CI/CD 파이프라인 배포 전략" width="750"/>
   <p><em><strong>GitHub Actions 기반 자동화 배포 파이프라인</strong></em></p>
 </div>
 
@@ -769,6 +791,12 @@ dashboard: 대시보드 업데이트
 - **API 호출 최적화**: BATCH_SIZE=6, DELAY=65초로 Google API 제한 완전 회피
 - **처리 효율성**: 82.4% (변경된 데이터만 선별 처리)
 - **장애 복구**: 자동 JSON 병합으로 zero data loss 달성
+
+**📊 v3.4.0 성능 지표 대시보드**
+<div align="center">
+  <img src="images/performance-dashboard.png" alt="성능 지표 대시보드" width="900"/>
+  <p><em><strong>데이터 무결성 100% + API 최적화 + 처리 효율성 82.4% 실시간 모니터링</strong></em></p>
+</div>
 
 ### 2025년 7월 - 메이저 업데이트 시즌
 
