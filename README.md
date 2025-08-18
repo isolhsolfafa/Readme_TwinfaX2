@@ -86,7 +86,7 @@ GST 공장의 **제조 데이터를 실시간으로 수집, 분석, 시각화**�
 ### 시스템 아키텍처
 
 <div align="center">
-  <img src="images/system-architecture.png" alt="시스템 아키텍처" width="900"/>
+  <img src="images/system-architecture(v3.4.0).png" alt="시스템 아키텍처" width="900"/>
   <p><em><strong>GST 제조 DX 통합 자동화 시스템 아키텍처</strong></em></p>
 </div>
 
