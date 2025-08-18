@@ -416,7 +416,7 @@ Request URL: https://*****.up.railway.app/slack/interactive
 ### 배포 전략
 
 <div align="center">
-  <img src="images/cicd-pipeline.png" alt="CI/CD 파이프라인 배포 전략" width="750"/>
+  <img src="images/cicd-pipeline(v3.4.0).png" alt="CI/CD 파이프라인 배포 전략" width="750"/>
   <p><em><strong>GitHub Actions 기반 자동화 배포 파이프라인</strong></em></p>
 </div>
 
