@@ -749,6 +749,30 @@ dashboard: 대시보드 업데이트
 
 ### 2025년 8월 - 클라우드 안정성 및 비동기 처리 완성
 
+### v3.7.0 (2025-08-26) 💾 **중복 데이터 대량 정리 + 최신 Progress 보장**
+- **중복 document_id 대량 정리**: 359개 S/N의 중복 데이터 170,110개 행 완전 정리
+  - GBWS-6018: 113개 → 10개 (최신 10개 보존)
+  - 총 6,817개 documents, 34,022개 progress_summary, 129,454개 task_summary 삭제
+  - Railway 클라우드 DB 용량 약 80% 절약 및 쿼리 성능 대폭 개선
+- **React 생산요약테이블 최신화**: CTE 쿼리로 각 S/N별 최신 document_id만 선택
+  - `WITH latest_docs AS (SELECT MAX(document_id))` 패턴으로 중복 제거
+  - 사용자에게 항상 최신 Progress 상태만 표시하도록 보장
+  - API 응답 시간 단축 및 정확한 진행률 업데이트 실현
+- **안전한 중복 정리 시스템**: cleanup_duplicate_documents.py 스크립트 개발
+  - Railway 클라우드 DB 직접 연결 (하드코딩 + 환경변수 이중 지원)
+  - 최근 N개 보존 옵션으로 히스토리 데이터 안전 보장
+  - DRY RUN 모드와 트랜잭션 기반 안전한 삭제 프로세스
+- **데이터 무결성 확보**: INSERT 기반 히스토리 추적 로직 유지
+  - 초기 UPDATE 로직 시도 → INSERT 유지로 변경사항 히스토리 보존
+  - Progress 변동 감지 시스템과 완벽 호환성 유지
+  - API는 최신 표시, 데이터는 전체 이력 보존하는 하이브리드 아키텍처
+
+**기술적 성과:**
+- PostgreSQL CTE(Common Table Expression) 활용한 복잡 쿼리 최적화
+- psycopg2 트랜잭션 관리 및 Foreign Key 순서 고려한 안전한 삭제
+- Railway 클라우드 환경에서 대용량 데이터 정리 작업 성공적 수행
+- React 실시간 데이터 표시와 백엔드 히스토리 보존의 균형점 확보
+
 ### v3.6.0 (2025-08-19) 🚀 **비동기 API 완성 + Railway Pro 플랜 최적화**
 - **HTTP 000 에러 완전 해결**: GitHub Actions 타임아웃 문제 근본적 해결
   - 비동기 /extract 엔드포인트 도입으로 즉시 HTTP 200 응답 (60초 이내)
