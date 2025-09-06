@@ -11,7 +11,7 @@
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-12+-336791?style=flat-square&logo=postgresql)](https://postgresql.org/)
 [![Deployed on Railway](https://img.shields.io/badge/API-Railway-0052CC?style=flat-square&logo=railway)](https://*****)
 [![Deployed on Netlify](https://img.shields.io/badge/Dashboard-Netlify-00C7B7?style=flat-square&logo=netlify)](https://*****)
-[![▶ Dashboard Demo](https://img.shields.io/badge/Dashboard_Demo-YouTube-FF0000?style=flat-square&logo=youtube)](https://youtu.be/esTtmO8jM_k)  
+[![▶ Dashboard Demo](https://img.shields.io/badge/Dashboard_Demo-YouTube-FF0000?style=flat-square&logo=youtube)](https://youtu.be/Jrclx61FrDg)  
 [![▶ Slack Bot Demo](https://img.shields.io/badge/Slack_Bot_Demo-YouTube-FF0000?style=flat-square&logo=youtube)](https://youtube.com/shorts/sjsWLC4aH50?feature=share)  
 
 
