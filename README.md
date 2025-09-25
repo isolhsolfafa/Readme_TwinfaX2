@@ -1156,7 +1156,6 @@ Built by 김동규 / 제조기술1팀 / DX TF
 
 ## ROADMAP
 # 🏗️ GST Factory 통합 아키텍처  2025~2026 Roadmap
-> **Architect Persona: 시스템 설계 전문가의 종합 아키텍처 **
 
 ## 📊 **Executive Summary**
 
