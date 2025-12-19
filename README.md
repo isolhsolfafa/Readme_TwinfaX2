@@ -749,6 +749,31 @@ dashboard: 대시보드 업데이트
 
 ## 업데이트 히스토리
 
+### v3.8.0 (2025-12-19) 📅 **2026년 전환 대비 - 크로스 연도 지원 및 휴일 업데이트**
+- **Google Drive 크로스 연도 폴더 검색**: 연도를 걸치는 날짜 범위 지원
+  - `drive_data_extractor.py`: 2026년 폴더 검색 로직 추가 (`DRIVE_FOLDER_ID_2026`)
+  - `_get_folder_id_for_year()`: 연도별 폴더 ID 자동 선택 메서드
+  - `_generate_month_prefixes()`: 날짜 범위 내 모든 월 prefix 생성 (예: 2512, 2601)
+  - 12월~1월 데이터 추출 시 25년/26년 폴더 동시 검색 가능
+- **2026년 한국 공휴일 추가**: 워킹데이 계산 정확도 향상
+  - `SummaryTable.js`: 2026년 공휴일 13개 추가 (설날, 삼일절, 추석 등)
+  - `config/settings.py`: Python 백엔드 HOLIDAYS 리스트 2026년 업데이트
+  - 대체공휴일 포함: 삼일절(3/2), 석가탄신일(5/25), 광복절(8/17), 개천절(10/4-5)
+- **Slack 봇 연도/월 동적 파싱**: 2026년 이후 자동 지원
+  - `main_api_cloud(26update).py`: 하드코딩 제거, 동적 연도 처리
+
+**수정된 파일:**
+- `utils/drive_data_extractor.py` - 크로스 연도 폴더 검색 로직
+- `factory-dashboard/src/components/SummaryTable.js` - 2026년 공휴일 추가
+- `factory-dashboard/src/components/CycleTimeAnalysis.js` - 동적 월 옵션 (기존 완료)
+- `config/settings.py` - 2026년 HOLIDAYS 리스트
+- `api/main_api_cloud(26update).py` - Slack 봇 동적 파싱
+
+**환경변수 추가 (Railway):**
+```
+DRIVE_FOLDER_ID_2026=116WhO9ySaO3m********
+```
+
 ### **2025-09-03 (v2.5.0) - 데이터 추출 최적화 & 자동화 강화**
 
 #### 🔧 **핵심 개선사항**
@@ -796,6 +821,7 @@ query = "(name contains '2508' or name contains '2509')"
 - **자동화 가이드**: `CLEANUP_AUTOMATION_GUIDE.md` 신규 생성
 - **설정 방법**: GitHub Actions 워크플로우 상세 가이드
 - **모니터링**: Railway 대시보드 연동 확인 방법
+
 
 
 ### 2025년 8월 - 클라우드 안정성 및 비동기 처리 완성
