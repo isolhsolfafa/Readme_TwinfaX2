@@ -749,6 +749,59 @@ dashboard: 대시보드 업데이트
 
 ## 업데이트 히스토리
 
+### v3.8.2 (2026-01-05) 🔧 **날짜 파싱 연도 추론 버그 수정**
+- **문제 발견**: v3.8.0에서 크로스 연도 폴더 검색은 구현했으나, 날짜 파싱 시 연도 추론 로직에 문제 발생
+  - "12월 15일" 형식의 날짜가 2026-12-15로 잘못 파싱됨 (현재 시점 기준 추론)
+  - 25년 12월 파일의 날짜가 26년 12월로 적재되는 문제
+- **해결 방법**: 스프레드시트 제목(title_number)에서 기준 연도 추출
+  - `sheet_extractor.py`: `title_number`에서 연도 추출 로직 추가
+    - 예: `251215/5919/5939` → `251215` → 2025년 추출
+  - `data_processing_core.py`: `parse_korean_datetime`에 `reference_year` 파라미터 추가
+    - 파일 기준 연도를 기반으로 "X월 Y일" 형식 날짜 파싱
+- **연도 롤오버 처리**: 12월 시작 → 1월 종료 케이스 지원
+  - 입력 월이 1~3월이고 기준 연도 날짜가 180일 이상 과거면 다음 해로 추론
+  - 예: 파일명 `251215` (2025년), 입력 "1월 10일" → 2026-01-10으로 파싱
+
+**수정된 파일:**
+- `utils/sheet_extractor.py` - `fetch_info_metadata()`: title_number에서 reference_year 추출 및 전달
+- `utils/data_processing_core.py` - `parse_korean_datetime()`: reference_year 파라미터 추가, 연도 롤오버 로직
+
+**핵심 변경 코드:**
+```python
+# sheet_extractor.py (72-83줄)
+reference_year = None
+if title_number and "/" in title_number:
+    date_part = title_number.split("/")[0]  # "251215"
+    if len(date_part) >= 2 and date_part[:2].isdigit():
+        reference_year = 2000 + int(date_part[:2])  # 25 → 2025
+
+# data_processing_core.py
+def parse_korean_datetime(dt_input, reference_year=None):
+    # reference_year 기반 연도 추론
+    if month <= 3:
+        if candidate_date_this_year < now - pd.Timedelta(days=180):
+            year = reference_year + 1  # 연도 롤오버
+```
+
+### v3.8.1 (2025-12-24) 🖥️ **공장 모니터 대시보드 개선 및 휴일 동기화**
+- **공장 모니터 전용 App 개선**: 탭 메뉴 제거 및 전체 화면 최적화
+  - `App(monitor).js`: 탭 메뉴(공장/협력사/내부) 완전 제거
+  - 불필요한 컴포넌트 삭제 (PartnerDashboard, InternalDashboard, AuthButtons)
+  - 자동 새로고침: 10분 → 30분으로 변경 (1,800,000ms)
+- **모니터용 공휴일 동기화**: 2026년 휴일 추가
+  - `SummaryTable(monitor).js`: 2026년 공휴일 13개 추가
+  - 메인 `SummaryTable.js`와 동일한 휴일 리스트 유지
+- **index 파일 정리**: 공장 모니터 전용 설정
+  - `index(factory_monitor).html`: 탭 메뉴 제거, iframe 전체 화면 (100vh)
+
+**수정된 파일 (공장 모니터용):**
+- `/PDA/factory-dashboard/src/App(monitor).js` - 탭 메뉴 제거, 30분 새로고침
+- `/PDA/factory-dashboard/src/components/SummaryTable(monitor).js` - 2026년 공휴일 추가
+- `/PDA/factory-dashboard/public/index(factory_monitor).html` - 전체 화면 설정
+
+**GitHub 레포 (Netlify 배포):**
+- `gst-factory-display` → `gst-factory-monitor.netlify.app`
+
 ### v3.8.0 (2025-12-19) 📅 **2026년 전환 대비 - 크로스 연도 지원 및 휴일 업데이트**
 - **Google Drive 크로스 연도 폴더 검색**: 연도를 걸치는 날짜 범위 지원
   - `drive_data_extractor.py`: 2026년 폴더 검색 로직 추가 (`DRIVE_FOLDER_ID_2026`)
